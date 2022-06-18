@@ -19,10 +19,21 @@
 <p align="center"> This depends upon your goal. This repository is set up to support users with three goals in mind.</p>
 <p align="center"><ol>
 <li>If your goal is only to practice Linq - Use the "Strictly_Linq" branch</li>
-<ul><li>This branch will have tests pre-created for each method. This branch does not focus on TDD - so all tests will be uncommented from the start.</li></ul>
+	<ul>
+	<li>This branch will have tests pre-created for each method. </li>
+	<li>This branch does not focus on TDD - so all tests will be uncommented from the start.</li>
+	</ul>
 <li>If your goal is to practice Linq with a minor focus on TDD - Use the "Tests_PreMade" branch</li>
-<p>This branch will have (most) tests already created for you. Once you pass a test, you will uncomment the next one until you meet all requirements. This is a great start for TDD, since the idea with Test Driven Development is for you to only write enough code to pass the current test that you are working on.</p>
+	<ul>
+	<li>This branch will have (most) tests already created for you.</li>
+	<li>Once you pass a test, you will uncomment the next one until you pass all requirements.</li>
+	<li>This is a great start for TDD, since the idea with Test Driven Development is for you to only write enough code to pass the current test that you are working on.</li>
+	</ul>
 <li>If your goal is to practice Test Driven Development - Use the "TDD_Practice" branch</li>
-<p>This branch will provide you with a list of requirements that you can use to create your tests. If that seems intimidating, remember that you can reference the other branches for ideas. Your requirements will be broken down into simple bullet points that are "One Requirement => One Test".</p>
+	<ul>
+	<li>This branch will provide you with a list of requirements that you can use to create your tests.</li>
+	<li>If that seems intimidating, remember that you can reference the other branches for ideas.</li>
+	<li>Your requirements will be broken down into simple bullet points that are "One Requirement => One Test".</li>
+	</ul>
 <p align="center">When using this branch, please remember to practice TDD properly. Create one tests at a time, run it first to ensure it fails. After passing one test, create the next one. One at a time.</p>
 </ol><p>
