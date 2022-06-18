@@ -22,18 +22,18 @@
 	<ul>
 	<li>This branch will have tests pre-created for each method. </li>
 	<li>This branch does not focus on TDD - so all tests will be uncommented from the start.</li>
-	</ul>
+	</ul><br>
 <li>If your goal is to practice Linq with a minor focus on TDD - Use the "Tests_PreMade" branch</li>
 	<ul>
 	<li>This branch will have (most) tests already created for you.</li>
 	<li>Once you pass a test, you will uncomment the next one until you pass all requirements.</li>
 	<li>This is a great start for TDD, since the idea with Test Driven Development is for you to only write enough code to pass the current test that you are working on.</li>
-	</ul>
+	</ul><br>
 <li>If your goal is to practice Test Driven Development - Use the "TDD_Practice" branch</li>
 	<ul>
 	<li>This branch will provide you with a list of requirements that you can use to create your tests.</li>
 	<li>If that seems intimidating, remember that you can reference the other branches for ideas.</li>
-	<li>Your requirements will be broken down into simple bullet points that are "One Requirement => One Test".</li>
-	</ul>
+	<li>Your requirements will be broken down into "One Requirement => One Test".</li>
+	</ul><br>
 <p align="center">When using this branch, please remember to practice TDD properly. Create one tests at a time, run it first to ensure it fails. After passing one test, create the next one. One at a time.</p>
 </ol><p>
