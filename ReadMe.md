@@ -19,7 +19,7 @@
 <p align="center"> This depends upon your goal. This repository is set up to support users with three goals in mind.</p>
 <p align="center"><ol>
 <li>If your goal is only to practice Linq - Use the "Strictly_Linq" branch</li>
-<p>This branch will have tests pre-created for each method. This branch does not focus on TDD - so all tests will be uncommented from the start.</p>
+<ul><li>This branch will have tests pre-created for each method. This branch does not focus on TDD - so all tests will be uncommented from the start.</li></ul>
 <li>If your goal is to practice Linq with a minor focus on TDD - Use the "Tests_PreMade" branch</li>
 <p>This branch will have (most) tests already created for you. Once you pass a test, you will uncomment the next one until you meet all requirements. This is a great start for TDD, since the idea with Test Driven Development is for you to only write enough code to pass the current test that you are working on.</p>
 <li>If your goal is to practice Test Driven Development - Use the "TDD_Practice" branch</li>
