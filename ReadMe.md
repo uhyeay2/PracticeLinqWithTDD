@@ -23,6 +23,6 @@
 <li>If your goal is to practice Linq with a minor focus on TDD - Use the "Tests_PreMade" branch</li><br>
 <p>This branch will have (most) tests already created for you. Once you pass a test, you will uncomment the next one until you meet all requirements. This is a great start for TDD, since the idea with Test Driven Development is for you to only write enough code to pass the current test that you are working on.</p>
 <li>If your goal is to practice Test Driven Development - Use the "TDD_Practice" branch</li><br>
-<p>This branch will provide you with a list of requirements that you can use to create your tests. If that seems intimidating, remember that you can reference the other branches for ideas. Your requirements will be broken down into simple bullet points that are "One Requirement => One Test".</p><br>
-<p>When using this branch, please remember to practice TDD properly. Create one tests at a time, run it first to ensure it fails. After passing one test, create the next one. One at a time.</p><br>
+<p>This branch will provide you with a list of requirements that you can use to create your tests. If that seems intimidating, remember that you can reference the other branches for ideas. Your requirements will be broken down into simple bullet points that are "One Requirement => One Test".</p>
+<p>When using this branch, please remember to practice TDD properly. Create one tests at a time, run it first to ensure it fails. After passing one test, create the next one. One at a time.</p>
 </ol><p>
