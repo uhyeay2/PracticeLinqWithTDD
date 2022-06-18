@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqChallenge", "LinqChallenge\LinqChallenge.csproj", "{52110992-42A5-4653-8E75-2100CC7B8A76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqChallenge", "LinqChallenge\LinqChallenge.csproj", "{52110992-42A5-4653-8E75-2100CC7B8A76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqChallenge.Domain", "LinqChallenge.Domain\LinqChallenge.Domain.csproj", "{6D142188-9D1B-45B3-8D59-F2016C5CED8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqChallenge.Domain.Tests", "LinqChallenge.Domain.Tests\LinqChallenge.Domain.Tests.csproj", "{5BA13EDE-A36B-4AE3-80E2-BAAA4B980116}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{52110992-42A5-4653-8E75-2100CC7B8A76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52110992-42A5-4653-8E75-2100CC7B8A76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52110992-42A5-4653-8E75-2100CC7B8A76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D142188-9D1B-45B3-8D59-F2016C5CED8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D142188-9D1B-45B3-8D59-F2016C5CED8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D142188-9D1B-45B3-8D59-F2016C5CED8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D142188-9D1B-45B3-8D59-F2016C5CED8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BA13EDE-A36B-4AE3-80E2-BAAA4B980116}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BA13EDE-A36B-4AE3-80E2-BAAA4B980116}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BA13EDE-A36B-4AE3-80E2-BAAA4B980116}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BA13EDE-A36B-4AE3-80E2-BAAA4B980116}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
