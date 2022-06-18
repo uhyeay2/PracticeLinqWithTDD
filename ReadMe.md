@@ -3,11 +3,13 @@
 
 <h2 align="center"> Created by Daniel Aguirre </h2>
 <p align="center"><a href="https://www.linkedin.com/in/daniel-aguirre-/">Lets connect on LinkedIn!</a></p>
-<p align="center"><a href="https://drive.google.com/drive/folders/1O9n09P9O6YiDrPapbquSuq5WP0J4jGeP?usp=sharing">View My Public Coding Videos</a></p>
-<p align="center"><a href="https://drive.google.com/drive/folders/1OU6cIBteGs50pT0EFf69pdqEK1m53bAZ?usp=sharing">View My Intro To TDD Videos</a></p>
+<p align="center">
+	<a href="https://drive.google.com/drive/folders/1O9n09P9O6YiDrPapbquSuq5WP0J4jGeP?usp=sharing">View My Public Coding Videos</a>
+	<a href="https://drive.google.com/drive/folders/1OU6cIBteGs50pT0EFf69pdqEK1m53bAZ?usp=sharing">View My Intro To TDD Videos</a>
+</p>
 
 <h2 align="center"> My Goal & Why You Should Use This Repository </h2>
-<p align="center"> My goal is to provide a project where you can practice Linq and/or Test Driven Development. Both of these are valuable skills that any developer can benefit from learning. Even if you are already familiar with both of these skills, continuing to hone your craft will help your career.</p>
+<p> My goal is to provide a project where you can practice Linq and/or Test Driven Development. Both of these are valuable skills that any developer can benefit from learning. Even if you are already familiar with both of these skills, continuing to hone your craft will help your career.</p>
 
 <h2 align="center"> My Only Request </h2>
 <p> I would love to hear any feedback you have after using the repository. If I can improve it for future users, or if you just really loved it, I appreciate all feedback. </p>
