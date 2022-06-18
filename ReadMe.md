@@ -2,9 +2,9 @@
 <h1 align="center"> Practice Linq With Test Driven Development </h1>
 
 <h2 align="center"> Created by Daniel Aguirre </h2>
-<p align="center"><a href="https://www.linkedin.com/in/daniel-aguirre-/">Lets connect on LinkedIn!</a></p>
-<p align="center"><a href="https://drive.google.com/drive/folders/1O9n09P9O6YiDrPapbquSuq5WP0J4jGeP?usp=sharing">View My Public Coding Videos</a></p>
-<p align="center"><a href="https://drive.google.com/drive/folders/1OU6cIBteGs50pT0EFf69pdqEK1m53bAZ?usp=sharing">View My Intro To TDD Videos</a></p>
+<p align="center"><a href="https://www.linkedin.com/in/daniel-aguirre-/" target="_blank">Lets connect on LinkedIn!</a></p>
+<p align="center"><a href="https://drive.google.com/drive/folders/1O9n09P9O6YiDrPapbquSuq5WP0J4jGeP?usp=sharing" target="_blank">View My Public Coding Videos</a></p>
+<p align="center"><a href="https://drive.google.com/drive/folders/1OU6cIBteGs50pT0EFf69pdqEK1m53bAZ?usp=sharing" target="_blank">View My Intro To TDD Videos</a></p>
 
 <h2 align="center"> My Goal & Why You Should Use This Repository </h2>
 <p align="center"> My goal is to provide a project where you can practice Linq and/or Test Driven Development. </p>
