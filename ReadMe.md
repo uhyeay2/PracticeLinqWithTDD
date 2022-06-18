@@ -5,6 +5,7 @@
 <p align="center"><a href="https://www.linkedin.com/in/daniel-aguirre-/">Lets connect on LinkedIn!</a></p>
 <p align="center">
 	<a href="https://drive.google.com/drive/folders/1O9n09P9O6YiDrPapbquSuq5WP0J4jGeP?usp=sharing">View My Public Coding Videos</a>
+	or you can
 	<a href="https://drive.google.com/drive/folders/1OU6cIBteGs50pT0EFf69pdqEK1m53bAZ?usp=sharing">View My Intro To TDD Videos</a>
 </p>
 
