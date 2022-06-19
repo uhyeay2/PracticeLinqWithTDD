@@ -1,12 +1,31 @@
-﻿using LinqChallenge.Domain.Entities;
-using LinqChallenge.Domain.Enums;
-using LinqChallenge.Easy;
+﻿using LinqChallenge.Easy;
 
 namespace LinqChallenge.Tests.Easy
 {
     [TestFixture]
     public class WhereChallengeTests
     {
+        /*  Getting Started Instructions
+            
+            TODO: Read Instructions! - You can delete this line after reading 
+                                        - You can see TODO's from ( View -> Task List )         
+
+
+            Below I have created the start of a first test for you. You still need to make a few changes,
+                    such as renaming the test method's name, or making sure that your result is correct.
+
+
+            After your first test (Which should only be asserting one requirement!) you can move on to the next requirement.
+                    - Once you have completed all requirements for a method, you can move on and try another!
+
+
+            If you'd like to see how I created the tests, feel free to take a peek at one of the other branches.
+
+            Coming Soon: Introduction Video
+        */
+
+        [Test]
+        public void GetPeopleOlderThanEighteen_MakeYourFirstTest()
         private readonly WhereChallenge _challenge = new();
 
         #region GetPeopleOlderThanEighteen Tests
