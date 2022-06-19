@@ -29,6 +29,6 @@
 
         private int ConvertCentimetersToInches => (int)Math.Round(_lengthInCentimeters / _inchesToCentimetersRatio);
 
-        double ConvertToCentimeters(int feet, int inches) => ((feet * _inchesPerFoot) + inches) * _inchesToCentimetersRatio;
+        private static double ConvertToCentimeters(int feet, int inches) => ((feet * _inchesPerFoot) + inches) * _inchesToCentimetersRatio;
     }
 }

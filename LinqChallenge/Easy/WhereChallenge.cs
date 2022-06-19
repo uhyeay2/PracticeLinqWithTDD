@@ -1,13 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using LinqChallenge.Domain.Entities;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinqChallenge.Easy
 {
-    public static class WhereChallenge
+    public class WhereChallenge
     {
+        /* GetPeopleOlderThanEighteen - Recommended Requirements          
+        
+            These are suggested names for your tests. They should be descriptive enough for you to create an assertion.
 
+            Given_Null_Should_ReturnEmptyCollection
+            Given_EmptyCollection_Should_ReturnEmptyCollection
+            Given_PeopleWhereNoneAreOlderThanEighteen_Should_ReturnEmptyCollection
+            Given_PeopleWhereSomeAreOlderThanEighteen_Should_ReturnOnlyPeopleOlderThanEighteen                        
+        */
+        public IEnumerable<Person> GetPeopleOlderThanEighteen(IEnumerable<Person> people)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
