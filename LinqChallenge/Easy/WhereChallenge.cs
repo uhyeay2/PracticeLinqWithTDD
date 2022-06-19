@@ -11,8 +11,7 @@ namespace LinqChallenge.Easy
     {
         /* GetPeopleOlderThanEighteen - Tests Details
 
-            Below are the names of your tests. You should try to complete these one at a time.
-            After solving a test, uncomment the next one below it until you have met all requirements.
+            Below are the names of your tests - Have fun!
 
             Given_Null_Should_ReturnEmptyCollection
             Given_EmptyCollection_Should_ReturnEmptyCollection

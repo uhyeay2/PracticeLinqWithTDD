@@ -1,6 +1,4 @@
-﻿using LinqChallenge.Domain.Entities;
-using LinqChallenge.Domain.Enums;
-using LinqChallenge.Easy;
+﻿using LinqChallenge.Easy;
 
 namespace LinqChallenge.Tests.Easy
 {
@@ -17,25 +15,23 @@ namespace LinqChallenge.Tests.Easy
             Assert.That(_challenge.GetPeopleOlderThanEighteen(null!), Is.Empty);
         }
 
-        //[TestCaseSource(nameof(_emptyPeopleCollections)), Description("Second Test - Return empty collection when input is empty")]
-        //public void GetPeopleOlderThanEighteen_Given_EmptyCollection_Should_ReturnEmptyCollection(IEnumerable<Person> emptyCollection)
-        //{
-        //    Assert.That(_challenge.GetPeopleOlderThanEighteen(emptyCollection), Is.Empty);
-        //}
+        [TestCaseSource(nameof(_emptyPeopleCollections)), Description("Second Test - Return empty collection when input is empty")]
+        public void GetPeopleOlderThanEighteen_Given_EmptyCollection_Should_ReturnEmptyCollection(IEnumerable<Person> emptyCollection)
+        {
+            Assert.That(_challenge.GetPeopleOlderThanEighteen(emptyCollection), Is.Empty);
+        }
 
-        //[Test, Description("Third Test - Return empty collection when all people are under eighteen.")]
-        //public void GetPeopleOlderThanEighteen_Given_PeopleWhereNoneAreOlderThanEighteen_Should_ReturnEmptyCollection()
-        //{
-        //    Assert.That(_challenge.GetPeopleOlderThanEighteen(_peopleYoungerThanEighteen), Is.Empty);
-        //}
+        [Test, Description("Third Test - Return empty collection when all people are under eighteen.")]
+        public void GetPeopleOlderThanEighteen_Given_PeopleWhereNoneAreOlderThanEighteen_Should_ReturnEmptyCollection()
+        {
+            Assert.That(_challenge.GetPeopleOlderThanEighteen(_peopleYoungerThanEighteen), Is.Empty);
+        }
 
-        //[Test, Description("Fourth Test - Return only people who are 18 or older when input contains people of all ages")]
-        //public void GetPeopleOlderThanEighteen_Given_PeopleWhereSomeAreOlderThanEighteen_Should_ReturnOnlyPeopleOlderThanEighteen()
-        //{
-        //    Assert.That(_challenge.GetPeopleOlderThanEighteen(_peopleOfAllAges), Is.EqualTo(_peopleOlderThanEighteen));
-        //}
-
-        // After completing your tests - go back and refactor your logic! Can you solve this in one line without breaking any tests?
+        [Test, Description("Fourth Test - Return only people who are 18 or older when input contains people of all ages")]
+        public void GetPeopleOlderThanEighteen_Given_PeopleWhereSomeAreOlderThanEighteen_Should_ReturnOnlyPeopleOlderThanEighteen()
+        {
+            Assert.That(_challenge.GetPeopleOlderThanEighteen(_peopleOfAllAges), Is.EqualTo(_peopleOlderThanEighteen));
+        }
 
         #endregion
 
