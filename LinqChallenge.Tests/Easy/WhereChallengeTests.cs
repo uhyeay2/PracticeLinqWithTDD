@@ -64,4 +64,4 @@ namespace LinqChallenge.Tests.Easy
 
         #endregion
     }
-}
+}   
