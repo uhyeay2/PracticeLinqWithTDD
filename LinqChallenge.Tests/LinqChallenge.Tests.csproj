@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LinqChallenge.Domain\LinqChallenge.Domain.csproj" />
+    <ProjectReference Include="..\LinqChallenge\LinqChallenge.csproj" />
   </ItemGroup>
 
 </Project>

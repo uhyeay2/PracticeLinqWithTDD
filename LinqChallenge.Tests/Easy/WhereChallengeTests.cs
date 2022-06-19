@@ -27,7 +27,7 @@ namespace LinqChallenge.Tests.Easy
         [Test]
         public void GetPeopleOlderThanEighteen_MakeYourFirstTest()
         {
-            // I gave you a head start. You still need to Finish the test though.
+            // I gave you a head start. You still need to finish the test though.
 
             // Arrange 
             var challenge = new WhereChallenge();
@@ -42,6 +42,7 @@ namespace LinqChallenge.Tests.Easy
         /*      
                 Hint: You can view your next requirements by going to LinqChallenge.Easy.WhereChallenge.cs
                       - Find the GetPeopleOlderThanEighteen method, and view the comments above it.
+                      - Hold Ctrl Key + Left Click WhereChallenge(); to have VS take you to that class.
         */
     }
 }

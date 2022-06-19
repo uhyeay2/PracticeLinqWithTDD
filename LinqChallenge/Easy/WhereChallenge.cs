@@ -86,9 +86,15 @@ namespace LinqChallenge.Easy
             throw new NotImplementedException();
         }
 
-        //  Are you done?
-        //  If so, Congratulations! You've reached the end of my Easy challenges for Linq's .Where() method.
-        //  Do you have any ideas for more methods/tests? Feel free to make up your own tests/methods.
+        /*  Are you done?
+           
+            If so, Congratulations! You've reached the end of my Easy challenges for Linq's .Where() method.
 
+            Do you have any ideas for more methods/tests? Feel free to make up your own tests/methods.
+            I'm also welcome to receiving PR contributions that follow the same flow as the rest of this project (across all branches).
+            
+            Thank you for taking the time to use my repository,
+            Daniel Aguirre
+        */
     }
 }
