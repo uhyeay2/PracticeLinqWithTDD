@@ -23,6 +23,7 @@ namespace LinqChallenge.Easy
             throw new NotImplementedException();
         }
 
+
         /*  GetPeopleWhoHaveTheFavoriteColorBlue - Recommended Requirements 
                  
             These are suggested names for your tests. They should be descriptive enough for you to create an assertion.
@@ -35,6 +36,7 @@ namespace LinqChallenge.Easy
         {
             throw new NotImplementedException();
         }
+
 
         /*  GetPeopleBornInApril - Recommended Requirements 
                  
@@ -49,6 +51,7 @@ namespace LinqChallenge.Easy
             throw new NotImplementedException();
         }
 
+
         /*  GetPeopleWhoseLastNameStartsWithA - Recommended Requirements 
                  
             These are suggested names for your tests. They should be descriptive enough for you to create an assertion.
@@ -61,6 +64,7 @@ namespace LinqChallenge.Easy
         {
             throw new NotImplementedException();
         }
+
 
         /*  GetPeopleWhereFullNameContainsLetterO - Recommended Requirements 
                  
@@ -76,6 +80,7 @@ namespace LinqChallenge.Easy
             throw new NotImplementedException();
         }
 
+
         /*  GetPeopleTallerThan - Recommended Requirements 
                  
             These are suggested names for your tests. They should be descriptive enough for you to create an assertion.
@@ -90,6 +95,7 @@ namespace LinqChallenge.Easy
         {
             throw new NotImplementedException();
         }
+
 
         /*  Are you done?
            
