@@ -50,10 +50,13 @@ namespace LinqChallenge.Tests
         public IEnumerable<IEnumerable<Person>> CollectionOfPeople => 
             BaseTestCaseCollection.Select(_ => _.Select(_ => PersonFactory.CreateUnique()));
 
+        public IEnumerable<IEnumerable<Person>> CollectionOfPeopleWithinHeightRange(Length minHeight, Length maxHeight) =>
+            BaseTestCaseCollection.Select(_ => _.Select(_ => PersonFactory.CreatePersonWithinHeightRange(minHeight, maxHeight)));
+
         public IEnumerable<IEnumerable<Person>> CollectionOfPeopleWhoDoNotLikeBlue => 
             BaseTestCaseCollection.Select(_ => _.Select(_ => PersonFactory.CreatePersonWhoDoesNotLikeTheColor(Color.Blue)));
 
-        public IEnumerable<IEnumerable<Person>> CollectionOfPeopleWhoseLastNameDoesNotContain(char c) =>
+        public IEnumerable<IEnumerable<Person>> CollectionOfPeopleWhoseNameDoesNotContain(char c) =>
             BaseTestCaseCollection.Select(_ => _.Select(_ => PersonFactory.CreatePersonWhoseNameDoesNotInclude(c.ToString())));
 
         public IEnumerable<IEnumerable<Person>> CollectionOfPeopleNotBornInApril => BaseTestCaseCollection.Select(_ => _

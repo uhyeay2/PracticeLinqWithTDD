@@ -40,16 +40,16 @@ namespace LinqChallenge.Tests.Easy
         #region GetPeopleOlderThanEighteen Tests
 
 
-        [TestCaseSource(nameof(_nullOrEmptyCollectionOfPeople)), 
-        Description("First Test - Return empty collection when input is null or empty")]
-        public void GetPeopleOlderThanEighteen_Given_EmptyCollection_Should_ReturnEmptyCollection(IEnumerable<Person> emptyCollection)
-        {
-            Assert.That(_challenge.GetPeopleOlderThanEighteen(emptyCollection), Is.Empty);
-        }
+        //[TestCaseSource(nameof(_nullOrEmptyCollectionOfPeople)), 
+        //Description("First Test - Return empty collection when input is null or empty")]
+        //public void GetPeopleOlderThanEighteen_Given_EmptyCollection_Should_ReturnEmptyCollection(IEnumerable<Person> emptyCollection)
+        //{
+        //    Assert.That(_challenge.GetPeopleOlderThanEighteen(emptyCollection), Is.Empty);
+        //}
 
 
         // Tip - Hold the Ctrl Key while pressing K key, then U key - to uncomment highligthed blocks of code.
-        // Try highlighting Lines 52 - 56 then using this keyboard shortcut to uncomment your next test.
+        // Try highlighting Lines 55 - 60 then using this keyboard shortcut to uncomment your next test.
 
 
         //[TestCaseSource(nameof(_collectionOfChildrenTestCases)),
@@ -108,58 +108,177 @@ namespace LinqChallenge.Tests.Easy
         #region GetPeopleBornInApril Tests
 
 
-        [TestCaseSource(nameof(_nullOrEmptyCollectionOfPeople)),
-        Description("First Test - Return empty collection when input is null or empty.")]
-        public void GetPeopleBornInApril_Given_NullOrEmpty_CollectionOfPerson_Should_ReturnEmptyCollection(IEnumerable<Person> emptyCollection)
-        {
-            Assert.That(_challenge.GetPeopleBornInApril(emptyCollection), Is.Empty);
-        }
+        //[TestCaseSource(nameof(_nullOrEmptyCollectionOfPeople)),
+        //Description("First Test - Return empty collection when input is null or empty.")]
+        //public void GetPeopleBornInApril_Given_NullOrEmpty_CollectionOfPerson_Should_ReturnEmptyCollection(IEnumerable<Person> emptyCollection)
+        //{
+        //    Assert.That(_challenge.GetPeopleBornInApril(emptyCollection), Is.Empty);
+        //}
 
 
-        [TestCaseSource(nameof(_collectionOfPeopleNotBornInApril)),
-        Description("Second Test - Return empty collection when no people were born in April.")]
-        public void GetPeopleBornInApril_Given_PeopleWhere_NoneAreBornInApril_Should_ReturnEmptyCollection(IEnumerable<Person> emptyCollection)
-        {
-            Assert.That(_challenge.GetPeopleBornInApril(emptyCollection), Is.Empty);
-        }
+        //[TestCaseSource(nameof(_collectionOfPeopleNotBornInApril)),
+        //Description("Second Test - Return empty collection when no people were born in April.")]
+        //public void GetPeopleBornInApril_Given_PeopleWhere_NoneAreBornInApril_Should_ReturnEmptyCollection(IEnumerable<Person> emptyCollection)
+        //{
+        //    Assert.That(_challenge.GetPeopleBornInApril(emptyCollection), Is.Empty);
+        //}
 
 
-        [TestCaseSource(nameof(_collectionOfPeople)),
-        Description("Third Test - Return only people who were born in April.")]
-        public void GetPeopleBornInApril_Given_PeopleWhere_SomeAreBornInApril_Should_ReturnOnlyPeople_BornInApril(IEnumerable<Person> emptyCollection)
-        {
-            Assert.That(_challenge.GetPeopleBornInApril(emptyCollection).All(p => p.DateOfBirth.Month == 4));
-        }
+        //[TestCaseSource(nameof(_collectionOfPeople)),
+        //Description("Third Test - Return only people who were born in April.")]
+        //public void GetPeopleBornInApril_Given_PeopleWhere_SomeAreBornInApril_Should_ReturnOnlyPeople_BornInApril(IEnumerable<Person> emptyCollection)
+        //{
+        //    Assert.That(_challenge.GetPeopleBornInApril(emptyCollection).All(p => p.DateOfBirth.Month == 4));
+        //}
 
 
         #endregion
 
-        #region GetPeopleWhoseLastNameStartsWithA
+        #region GetPeopleWhoseLastNameStartsWithA Tests
 
 
-        [TestCaseSource(nameof(_nullOrEmptyCollectionOfPeople)),
-        Description("First Test - Return empty collection when input is null or empty.")]
-        public void GetPeopleWhoseLastNameStartsWithA_Given_NullOrEmpty_CollectionOfPerson_Should_ReturnEmptyCollection(IEnumerable<Person> emptyCollection)
-        {
-            Assert.That(_challenge.GetPeopleWhoseLastNameStartsWithA(emptyCollection), Is.Empty);
-        }
+        //[TestCaseSource(nameof(_nullOrEmptyCollectionOfPeople)),
+        //Description("First Test - Return empty collection when input is null or empty.")]
+        //public void GetPeopleWhoseLastNameStartsWithA_Given_NullOrEmpty_CollectionOfPerson_Should_ReturnEmptyCollection(IEnumerable<Person> emptyCollection)
+        //{
+        //    Assert.That(_challenge.GetPeopleWhoseLastNameStartsWithA(emptyCollection), Is.Empty);
+        //}
 
 
-        [TestCaseSource(nameof(_collectionOfPeopleWhoseLastNameDoesNotStartWithA)),
-        Description("Second Test - Return empty collection when no people have a LastName starting with 'A'")]
-        public void GetPeopleWhoseLastNameStartsWithA_Given_PeopleWhere_NoLastNameStartsWithA_Should_ReturnEmptyCollection(IEnumerable<Person> emptyCollection)
-        {
-            Assert.That(_challenge.GetPeopleWhoseLastNameStartsWithA(emptyCollection), Is.Empty);
-        }
+        //[TestCaseSource(nameof(_collectionOfPeopleWhoseLastNameDoesNotStartWithA)),
+        //Description("Second Test - Return empty collection when no people have a LastName starting with 'A'")]
+        //public void GetPeopleWhoseLastNameStartsWithA_Given_PeopleWhere_NoLastNameStartsWithA_Should_ReturnEmptyCollection(IEnumerable<Person> emptyCollection)
+        //{
+        //    Assert.That(_challenge.GetPeopleWhoseLastNameStartsWithA(emptyCollection), Is.Empty);
+        //}
 
+
+        //[TestCaseSource(nameof(_collectionOfPeople)),
+        //Description("Third Test - Return only people who have a LastName starting with the 'A'")]
+        //public void GetPeopleWhoseLastNameStartsWithA_Given_PeopleWhere_SomeLastNamesStartsWithA_Should_ReturnOnlyPeople_WhoseLastNameStartsWithA(IEnumerable<Person> emptyCollection)
+        //{
+        //    Assert.That(_challenge.GetPeopleWhoseLastNameStartsWithA(emptyCollection).All(p => p.LastName.StartsWith('A')));
+        //}
+
+
+        #endregion
+
+        #region GetPeopleWhereFullNameContainsChar Tests
+
+        //[TestCaseSource(nameof(_nullOrEmptyCollectionOfPeople)),
+        //Description("First Test - Return empty collection when input is null or empty.")]
+        //public void GetPeopleWhereFullNameContainsChar_Given_NullOrEmpty_CollectionOfPerson_Should_ReturnEmptyCollection(IEnumerable<Person> emptyCollection)
+        //{
+        //    Assert.That(_challenge.GetPeopleWhereFullNameContainsChar(emptyCollection, 'E'), Is.Empty);
+        //}
+
+
+        //[TestCase('1')] [TestCase('2')] [TestCase('3')] [TestCase('4')] [TestCase('5')] [TestCase('6')] [TestCase('7')] [TestCase('8')] [TestCase('9')] [TestCase('0')]
+        //[TestCase('!')] [TestCase('@')] [TestCase('#')] [TestCase('$')] [TestCase('%')] [TestCase('^')] [TestCase('&')] [TestCase('*')] [TestCase('(')] [TestCase(')')]
+        //[TestCase('-')] [TestCase('_')] [TestCase('=')] [TestCase('+')] [TestCase('/')]
+        //[Description("Second Test - Throw an Exception with a message 'Character provided must be a letter' if the character provided is not a letter.")]
+        //public void GetPeopleWhereFullNameContainsChar_Given_CharProvided_IsNotALetter_Should_ThrowException_WithMessage_CharacterProvidedMustBeALetter(char c)
+        //{
+        //    var expectedExceptionMessage = "Character provided must be a letter";
+
+        //    var people = _testData.CollectionOfPeople.First();
+
+        //    Assert.That(Assert.Throws<Exception>(() => _challenge.GetPeopleWhereFullNameContainsChar(people, c)).Message, Is.EqualTo(expectedExceptionMessage));
+        //}
+
+
+        //[TestCaseSource(nameof(_collectionOfPeopleWhoseNameDoesNotContainA)),
+        //Description("Third Test - Return Empty Colection if no people have a name containing the character provided.")]
+        //public void GetPeopleWhereFullNameContainsChar_Given_PeopleWhere_NoFullName_ContainsCharProvided_Should_ReturnEmptyCollection(IEnumerable<Person> peopleWhoseNameDontContainA)
+        //{
+        //    Assert.That(_challenge.GetPeopleWhereFullNameContainsChar(peopleWhoseNameDontContainA, 'A'), Is.Empty);
+        //}
+
+
+        //[TestCaseSource(nameof(_collectionOfPeople)),
+        //Description("Fourth Test - Return only people whose name contains character provided")]
+        //public void GetPeopleWhereFullNameContainsChar_Given_PeopleWhere_SomeFullNames_ContainCharProvided_Should_ReturnOnlyPeople_WhoseFullNameContainsCharProvided(IEnumerable<Person> people)
+        //{
+        //    var peopleWhoseNameMightContainZ = people.ToList();
+
+        //    var expectedCount = peopleWhoseNameMightContainZ.Count(x => (x.FirstName + x.LastName).Contains('z'));
+
+        //    Assert.That(_challenge.GetPeopleWhereFullNameContainsChar(peopleWhoseNameMightContainZ, 'z').Count(), Is.EqualTo(expectedCount));
+        //}
+
+
+        #endregion
+
+        #region GetPeopleTallerThan Tests
 
         [TestCaseSource(nameof(_collectionOfPeople)),
-        Description("Third Test - Return only people who have a LastName starting with the 'A'")]
-        public void GetPeopleWhoseLastNameStartsWithA_Given_PeopleWhere_SomeLastNamesStartsWithA_Should_ReturnOnlyPeople_WhoseLastNameStartsWithA(IEnumerable<Person> emptyCollection)
+        Description("First Test - Throw Exception with message 'Invalid Height - Height must be greater than 0.' if height is null.")]
+        public void GetPeopleTallerThan_Given_HeightIsNull_Should_ThrowException_WithMessage_InvalidHeightReceived(IEnumerable<Person> collectionOfPeople)
         {
-            Assert.That(_challenge.GetPeopleWhoseLastNameStartsWithA(emptyCollection).All(p => p.LastName.StartsWith('A')));
+            var expectedMessage = "Invalid Height - Height must be greater than 0.";
+
+            Assert.That(Assert.Throws<Exception>(() => 
+                _challenge.GetPeopleTallerThan(collectionOfPeople, null!)).Message, Is.EqualTo(expectedMessage));            
         }
 
+        [TestCaseSource(nameof(_collectionOfPeople)),
+        Description("Second Test - Throw Exception with message 'Invalid Height - Height must be greater than 0.' if height is zero")]
+        public void GetPeopleTallerThan_Given_HeightIsZero_Should_ThrowException_WithMessage_InvalidHeightReceived(IEnumerable<Person> collectionOfPeople)
+        {
+            var expectedMessage = "Invalid Height - Height must be greater than 0.";
+
+            Assert.That(Assert.Throws<Exception>(() => 
+                _challenge.GetPeopleTallerThan(collectionOfPeople, new Length(0, 0))).Message, Is.EqualTo(expectedMessage));
+        }
+
+        [TestCaseSource(nameof(_nullOrEmptyCollectionOfPeople)),
+        Description("Third Test - Return empty collection when people provided is null or empty.")]
+        public void GetPeopleTallerThan_Given_NullOrEmpty_CollectionOfPeople_Should_ReturnEmptyCollection(IEnumerable<Person> emptyCollection)
+        {
+            Assert.That(_challenge.GetPeopleTallerThan(emptyCollection, new Length(3, 2)), Is.Empty);
+        }
+
+        [TestCaseSource(nameof(_collectionOfPeopleShorterThanFourFoot)),
+        Description("Fourth Test - Return empty collection when no people are taller than height provided.")]
+        public void GetPeopleTallerThan_Given_PeopleWhere_NoneAreTaller_ThanHeightProvided_Should_ReturnEmptyCollection(IEnumerable<Person> collectionOfPeopleShorterThanFourFoot)
+        {
+            Assert.That(_challenge.GetPeopleTallerThan(collectionOfPeopleShorterThanFourFoot, new Length(4, 0)), Is.Empty);
+        }
+
+        /* Now it's your turn!   
+         
+        You have a couple options on how to complete this test.
+
+        Option 1 - Arrange / Act / Assert 
+                    - Arrange the test by creating an instance of the class you are to test.
+                    - Act by storing the result of the method you are testing in a variable.
+                    - Assert that the result matches the expected outcome.
+
+        Option 2 - Review my tests to see how you might be able to create your tests more quickly.
+                    - Notice that I have an instance of the class already instantiated, named ' _challenge '
+                    - I do not store the result of my method inside a variable. Instead I call the method inside my Assertion.
+
+        Regardless of which option you choose, if you wish you can use the collectionOfPeopleTallerThanFourFoot as your test case.
+            This IEnumerable<Person> will contain a list of people where all of them are between 4'1" , and 7'6"
+        
+         I've given you a head start in case you are new to testing. Also feel free to contact me if you have any questions
+
+        Enjoy! */
+
+        //[TestCaseSource(nameof(_collectionOfPeopleTallerThanFourFoot)),
+        //Description("Fifth Test - Return only people who are taller than the height provided.")]
+        //public void GetPeopleTallerThan_Given_PeopleWhere_AllAreTaller_ThanFourFoot_Should_______FINISH_THIS_NAME_____(IEnumerable<Person> collectionOfPeopleTallerThanFourFoot)
+        //{
+        //    // Make sure to rename the test to appropriately explain what your test is expecting the result to be.            
+
+        //    // Arrange
+        //    //var challenge = new WhereChallenge(); 
+
+        //    // Act
+
+        //    // Assert
+        //    //throw new NotImplementedException(); // Remove this line and call your Assertion!
+        //}
 
         #endregion
 
@@ -181,7 +300,11 @@ namespace LinqChallenge.Tests.Easy
 
         private static readonly IEnumerable<IEnumerable<Person>> _collectionOfPeopleNotBornInApril = _testData.CollectionOfPeopleNotBornInApril;
 
-        private static readonly IEnumerable<IEnumerable<Person>> _collectionOfPeopleWhoseLastNameDoesNotStartWithA = _testData.CollectionOfPeopleWhoseLastNameDoesNotContain('A');
+        private static readonly IEnumerable<IEnumerable<Person>> _collectionOfPeopleWhoseNameDoesNotContainA = _testData.CollectionOfPeopleWhoseNameDoesNotContain('a');
+
+        private static readonly IEnumerable<IEnumerable<Person>> _collectionOfPeopleShorterThanFourFoot = _testData.CollectionOfPeopleWithinHeightRange(new(1, 6), new(3, 6));
+
+        private static readonly IEnumerable<IEnumerable<Person>> _collectionOfPeopleTallerThanFourFoot = _testData.CollectionOfPeopleWithinHeightRange(new(4, 1), new(7, 6));
 
         private static readonly object[] _nullOrEmptyCollectionOfPeople =
         {

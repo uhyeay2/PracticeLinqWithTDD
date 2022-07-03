@@ -1,4 +1,5 @@
 ﻿using LinqChallenge.Domain.Entities;
+using LinqChallenge.Domain.Interfaces;
 using System.Linq;
 
 namespace LinqChallenge.Easy
@@ -26,7 +27,8 @@ namespace LinqChallenge.Easy
 
         /*  GetPeopleWhoHaveTheFavoriteColorBlue - Recommended Requirements 
                  
-            These are suggested names for your tests. They should be descriptive enough for you to create an assertion.
+            Below are the names of your tests. You should try to complete these one at a time.
+            After solving a test, uncomment the next one below it until you have met all requirements.
 
             Given_NullOrEmpty_CollectionOfPerson_Should_ReturnEmptyCollection
             Given_PeopleWhere_NoneHaveFavoriteColorBlue_Should_ReturnEmptyCollection
@@ -40,7 +42,8 @@ namespace LinqChallenge.Easy
 
         /*  GetPeopleBornInApril - Recommended Requirements 
                  
-            These are suggested names for your tests. They should be descriptive enough for you to create an assertion.
+            Below are the names of your tests. You should try to complete these one at a time.
+            After solving a test, uncomment the next one below it until you have met all requirements.
 
             Given_NullOrEmpty_CollectionOfPerson_Should_ReturnEmptyCollection
             Given_PeopleWhere_NoneAreBornInApril_Should_ReturnEmptyCollection
@@ -54,7 +57,8 @@ namespace LinqChallenge.Easy
 
         /*  GetPeopleWhoseLastNameStartsWithA - Recommended Requirements 
                  
-            These are suggested names for your tests. They should be descriptive enough for you to create an assertion.
+            Below are the names of your tests. You should try to complete these one at a time.
+            After solving a test, uncomment the next one below it until you have met all requirements.
 
             Given_NullOrEmpty_CollectionOfPerson_Should_ReturnEmptyCollection
             Given_PeopleWhere_NoLastNameStartsWithA_Should_ReturnEmptyCollection
@@ -66,9 +70,10 @@ namespace LinqChallenge.Easy
         }
 
 
-        /*  GetPeopleWhereFullNameContainsLetterO - Recommended Requirements 
+        /*  GetPeopleWhereFullNameContainsLetterE - Recommended Requirements 
                  
-            These are suggested names for your tests. They should be descriptive enough for you to create an assertion.
+            Below are the names of your tests. You should try to complete these one at a time.
+            After solving a test, uncomment the next one below it until you have met all requirements.
 
             Given_NullOrEmpty_CollectionOfPerson_Should_ReturnEmptyCollection
             Given_CharProvided_IsNotALetter_Should_ThrowException_WithMessage_CharacterProvidedMustBeALetter
@@ -83,7 +88,8 @@ namespace LinqChallenge.Easy
 
         /*  GetPeopleTallerThan - Recommended Requirements 
                  
-            These are suggested names for your tests. They should be descriptive enough for you to create an assertion.
+            Below are the names of your tests. You should try to complete these one at a time.
+            After solving a test, uncomment the next one below it until you have met all requirements.
 
             Given_HeightIsNull_Should_ThrowException_WithMessage_InvalidHeightReceived
             Given_HeightIsZero_Should_ThrowException_WithMessage_InvalidHeightReceived
@@ -93,9 +99,14 @@ namespace LinqChallenge.Easy
         */
         public IEnumerable<Person> GetPeopleTallerThan(IEnumerable<Person> people, Length height)
         {
-            throw new NotImplementedException();
+            if(height is IValidatable validatableHeight && !validatableHeight.IsValid())
+            {
+                throw new Exception(validatableHeight.ValidationMessage);
+            }
+    
+            return people == null ? Enumerable.Empty<Person>() 
+                : people.Where(p => p.Height > height) ;
         }
-
 
         /*  Are you done?
            

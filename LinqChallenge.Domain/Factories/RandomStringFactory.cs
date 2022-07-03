@@ -76,9 +76,6 @@ namespace LinqChallenge.Domain.Factories
             return str;
         }
 
-
-        //string GenerateUniqueString => _allStringsHaveBeenUsed ? AppendLetterIfUsed(RandomStringFromSource) : RandomStringFromSource;       
-        static IEnumerable<char> AppendLetter(string str) => str.Append(RandomLetter);
         
         static char RandomLetter => Strings.Alphabet.ElementAt(_random.Next(Strings.Alphabet.Length));
 
