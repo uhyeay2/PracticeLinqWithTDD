@@ -99,13 +99,7 @@ namespace LinqChallenge.Easy
         */
         public IEnumerable<Person> GetPeopleTallerThan(IEnumerable<Person> people, Length height)
         {
-            if(height is IValidatable validatableHeight && !validatableHeight.IsValid())
-            {
-                throw new Exception(validatableHeight.ValidationMessage);
-            }
-    
-            return people == null ? Enumerable.Empty<Person>() 
-                : people.Where(p => p.Height > height) ;
+            throw new NotImplementedException();
         }
 
         /*  Are you done?
