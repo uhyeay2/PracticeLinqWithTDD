@@ -21,7 +21,8 @@ namespace LinqChallenge.Tests.Easy
 
             If you'd like to see how I created the tests, feel free to take a peek at one of the other branches.
 
-            Coming Soon: Introduction Video
+            Introduction Video: https://drive.google.com/file/d/17m934DFY45EtUr4H8YCJbtORUF5rPDYq/view?usp=sharing
+
         */
 
         [Test]
