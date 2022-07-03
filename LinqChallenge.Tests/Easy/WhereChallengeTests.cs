@@ -26,7 +26,7 @@ namespace LinqChallenge.Tests.Easy
                                      - If this sounds intimidating, remember you can reference branch for examples.
 
 
-            Coming Soon: Introduction Video
+            Introduction Video: https://drive.google.com/file/d/17m934DFY45EtUr4H8YCJbtORUF5rPDYq/view?usp=sharing
         */
 
         private readonly WhereChallenge _challenge = new();
