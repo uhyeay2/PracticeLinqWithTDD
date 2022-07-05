@@ -9,7 +9,7 @@ namespace LinqChallenge.Tests.Easy
     {
         /*  Getting Started Instructions
             
-            TODO: Read Instructions! - You can delete this line after reading 
+            // TODO: Read Instructions! - You can delete this line after reading 
                                         - You can see TODO's from ( View -> Task List )         
 
 

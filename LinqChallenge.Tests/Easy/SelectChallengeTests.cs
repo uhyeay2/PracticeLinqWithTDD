@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LinqChallenge.Easy;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,32 +10,152 @@ namespace LinqChallenge.Tests.Easy
     public class SelectChallengeTests
     {
 
-        /* Instructions can be found in LinqChallenge.Tests project, Easy Folder, WhereChallengeTests.cs if you are just starting the project.
+        // If you are just starting, you can find the instructions in the Linq Challenge project, Easy folder, WhereChallenge.cs class
 
-        Here are some tips to keep in mind if you are working on creating your first test.
+        private readonly SelectChallenge _challenge = new();
 
-        1) Recommended Test Names can be found in the Easy.SelectChallenge class.
+        #region GetBirthdays
 
-        2) I recommend starting the name of your Test Method with the name of the method you are testing.
-
-        3) You should only assert one thing per test.
-
-        4) Write one test at a time, and write them before you write the logic needed to pass the method.
-
-        5) If you find yourself initializing the same class in every test, perhaps you can initialize it as a property of the class
-                - private readonly SelectChallenge _challenge = new SelectChallenge();
-                - If you're unsure what this means, take a peek at my repo to see how I re-use the same instance of the Challenge classes.
-        */
-
-
-        // Here's a head start for you. If you need more of a head start, refer to LinqChallenge.Tests/Easy/WhereChallengeTests
-        // OR you can try checking out my Tests_PreMade branch for some ideas.
-
-
-        //[Test]
-        //public void GetBirthdays_Given_()
+        //[TestCaseSource(nameof(_nullOrEmptyCollectionOfPeople)),
+        //Description("First Test - Return empty collection when input is null or empty")]
+        //public void GetBirthdays_Given_NullOrEmpty_CollectionOfPerson_Should_ReturnEmptyCollection(IEnumerable<Person> nullOrEmptyCollectionOfPeople)
         //{
-
+        //    Assert.That(_challenge.GetBirthdays(nullOrEmptyCollectionOfPeople), Is.Empty);
         //}
+
+
+        //[TestCaseSource(nameof(_peopleAndTheirBirthdays)),
+        //Description("Second Test - Return collection of peoples birthdays")]
+        //public void GetBirthdays_Given_ColllectionOfPerson_Should_ReturnCollection_OfPeoplesBirthdays(IEnumerable<Person> people, IEnumerable<DateTime> birthdays)
+        //{
+        //    Assert.That(_challenge.GetBirthdays(people), Is.EqualTo(birthdays));
+        //}
+
+        #endregion
+
+        #region ConvertToUppercase
+
+        //[TestCaseSource(nameof(_nullOrEmptyCollectionOfStrings)),
+        //Description("First Test - Return empty collection when input is null or empty")]
+        //public void ConvertToUppercase_Given_NullOrEmpty_CollectionOfStrings_Should_ReturnEmptyCollection(IEnumerable<string> nullOrEmptyCollectionOfStrings)
+        //{
+        //    Assert.That(_challenge.ConvertToUppercase(nullOrEmptyCollectionOfStrings), Is.Empty);
+        //}
+
+
+        //[TestCaseSource(nameof(_collectionOfStrings)),
+        //Description("Second Test - Return strings converted to All Uppercase")]
+        //public void ConvertToUppercase_Given_CollectionOfStrings_Should_ReturnStrings_AllUppercase(IEnumerable<string> nullOrEmptyCollectionOfStrings)
+        //{
+        //    Assert.That(_challenge.ConvertToUppercase(nullOrEmptyCollectionOfStrings).All(s => s == s.ToUpper()));
+        //}
+
+        #endregion
+
+        #region SelectInches
+
+        //[TestCaseSource(nameof(_nullOrEmptyCollectionOfLengths)),
+        //Description("First Test - Return empty collection when input is null or empty")]
+        //public void SelectInches_Given_NullOrEmpty_CollectionOfLengths_Should_ReturnEmptyCollection(IEnumerable<Length> nullOrEmptyCollectionOfLengths)
+        //{
+        //    Assert.That(_challenge.SelectInches(nullOrEmptyCollectionOfLengths), Is.Empty);
+        //}
+
+
+        //[TestCaseSource(nameof(_collectionOfNumbers)),
+        //Description("Second Test - Return the Inches property from each Length in the collection.")]
+        //public void SelectInches_Given_CollectionOfLengths_Should_ReturnInches_FromEachLength(IEnumerable<int> collectionOfInches)
+        //{  
+        //    var lengths = collectionOfInches.Select(inches => (new Length(0, inches), inches)).ToArray();
+
+        //    Assert.That(_challenge.SelectInches(lengths.Select(x => x.Item1)), Is.EqualTo(lengths.Select(x => x.inches)));
+        //}
+
+
+        #endregion
+
+        #region DivideNumbers
+
+
+        //[TestCaseSource(nameof(_nullOrEmptyCollectionOfInts)),
+        //Description("First Test - Return empty collection when input is null or empty")]
+        //public void DivideNumbers_Given_NullOrEmpty_CollectionOfInts_Should_ReturnEmptyCollection(IEnumerable<int> nullOrEmptyCollectionOfInts)
+        //{
+        //    Assert.That(_challenge.DivideNumbers(nullOrEmptyCollectionOfInts, 2), Is.Empty);
+        //}
+
+
+        //[TestCaseSource(nameof(_collectionOfNumbers)),
+        //Description("Second Test - Throw an exception with the message 'Invalid Input! Cannot Divide By Zero!' when the number to divide by is Zero ")]
+        //public void DivideNumbers_Given_NumberToDivideBy_IsZero_Should_ThrowException_WithMessage(IEnumerable<int> collectionOfNumbers)
+        //{
+        //    var expectedExceptionMessage = "Invalid Input! Cannot Divide By Zero!";            
+            
+        //    Assert.That(Assert.Throws<Exception>(() => _challenge.DivideNumbers(collectionOfNumbers, 0))!.Message, Is.EqualTo(expectedExceptionMessage));
+        //}
+
+
+        //[TestCaseSource(nameof(_collectionOfNumbers)),
+        //Description("Third Test - Return each number divided by the number provided")]
+        //public void DivideNumbers_Given_CollectionOfInts_AndNotDividngByZero_Should_ReturnNumbers_DividedByNumberProvided(IEnumerable<int> collectionOfNumbers)
+        //{
+        //    var (input, output, numberToDivideBy) = GetNumbersAndTheirDivision(collectionOfNumbers);
+
+        //    Assert.That(_challenge.DivideNumbers(input, numberToDivideBy), Is.EqualTo(output));
+        //}
+
+        #endregion
+
+        #region Test Cases
+
+        private static readonly TestDataFactories _testData = new();
+
+        public static readonly object[] _nullOrEmptyCollectionOfPeople = _testData.EmptyCollection<Person>();
+
+        public static readonly object[] _nullOrEmptyCollectionOfStrings = _testData.EmptyCollection<string>();
+
+        public static readonly object[] _nullOrEmptyCollectionOfLengths = _testData.EmptyCollection<Length>();
+
+        public static readonly object[] _nullOrEmptyCollectionOfInts = _testData.EmptyCollection<int>();
+
+        private static readonly IEnumerable<IEnumerable<string>> _collectionOfStrings = _testData.CollectionOfStrings;
+
+        private static readonly IEnumerable<IEnumerable<int>> _collectionOfNumbers = _testData.CollectionOfRandomNumbersFromOneToThreeHundred;
+
+        public static readonly object[] _peopleAndTheirBirthdays =
+        {
+            new object[]
+            {
+                new List<Person>()
+                {
+                    _testData.PersonFactory.CreateSpecific(birthday: new DateTime(1990, 7, 4)),
+                    _testData.PersonFactory.CreateSpecific(birthday: new DateTime(1992, 4, 6)),
+                    _testData.PersonFactory.CreateSpecific(birthday: new DateTime(1994, 10, 16)),
+                    _testData.PersonFactory.CreateSpecific(birthday: new DateTime(2000, 1, 20))
+                },
+                new List<DateTime>()
+                {
+                    new DateTime(1990, 7, 4),
+                    new DateTime(1992, 4, 6),
+                    new DateTime(1994, 10, 16),
+                    new DateTime(2000, 1, 20)
+                }
+            }
+        };
+
+        private (IEnumerable<int> input, IEnumerable<int> output, int numberToDivideBy) GetNumbersAndTheirDivision(IEnumerable<int> numbers)
+        {
+            var numberToDivideBy = new Random().Next(1, 10);
+
+            var input = numbers.ToArray();
+
+            var output = input.Select(x => x / numberToDivideBy);
+
+            return (input, output, numberToDivideBy);
+        }
+
+        #endregion
+
     }
+
 }

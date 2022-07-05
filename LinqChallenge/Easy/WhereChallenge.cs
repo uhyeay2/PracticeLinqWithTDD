@@ -111,6 +111,8 @@ namespace LinqChallenge.Easy
             
             Thank you for taking the time to use my repository,
             Daniel Aguirre
+
+            -- If you want to go in the order I created the repository, then you can move to Easy/SelectChallenge next.              
         */
     }
 }

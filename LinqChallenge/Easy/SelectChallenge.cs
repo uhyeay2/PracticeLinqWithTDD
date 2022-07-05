@@ -1,4 +1,5 @@
 ﻿using LinqChallenge.Domain.Entities;
+using LinqChallenge.Domain.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,7 +56,7 @@ namespace LinqChallenge.Easy
         }
 
 
-        /*  ConvertToUppercase - Recommended Requirements
+        /*  DivideNumbers - Recommended Requirements
 
             These are suggested names for your tests. They should be descriptive enough for you to create an assertion.
 
