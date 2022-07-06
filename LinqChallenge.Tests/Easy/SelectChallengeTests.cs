@@ -90,7 +90,7 @@ namespace LinqChallenge.Tests.Easy
         //public void DivideNumbers_Given_NumberToDivideBy_IsZero_Should_ThrowException_WithMessage(IEnumerable<int> collectionOfNumbers)
         //{
         //    var expectedExceptionMessage = "Invalid Input! Cannot Divide By Zero!";            
-            
+
         //    Assert.That(Assert.Throws<Exception>(() => _challenge.DivideNumbers(collectionOfNumbers, 0))!.Message, Is.EqualTo(expectedExceptionMessage));
         //}
 
@@ -103,6 +103,43 @@ namespace LinqChallenge.Tests.Easy
 
         //    Assert.That(_challenge.DivideNumbers(input, numberToDivideBy), Is.EqualTo(output));
         //}
+
+        #endregion
+
+        #region ParseCollection
+
+
+        [TestCaseSource(nameof(_nullOrEmptyCollectionOfStrings)),
+        Description("First Test - Return empty collection when input is null or empty")]
+        public void DivideNumbers_Given_NullOrEmpty_CollectionOfStrings_Should_ReturnEmptyCollection(IEnumerable<string> nullOrEmptyCollectionOfStrings)
+        {
+            Assert.That(_challenge.ParseCollection(nullOrEmptyCollectionOfStrings), Is.Empty);
+        }
+
+
+        [TestCaseSource(nameof(_collectionOfNumbers)),
+        Description("Second Test - Return numbers parsed into strings when given a collection of strings")]
+        public void DivideNumbers_Given_CollectionOfStrings_WhereAllAreNumbers_Should_ReturnStrings_ParsedIntoInts(IEnumerable<int> collectionOfNumbers)
+        {
+            var (expected, numbers) = GetNumbersAsIntsAndStrings(collectionOfNumbers);
+
+            Assert.That(_challenge.ParseCollection(numbers), Is.EqualTo(expected));
+        }
+
+
+        [TestCaseSource(nameof(_collectionOfNumbers)),
+        Description("Third Test - Return strings as 0 if they are not a number")]
+        public void DivideNumbers_Given_CollectionOfStrings_WhereNotAllAreNumbers_Should_ReturnZero_ForStringsThat_AreNotNumbers(IEnumerable<int> collectionOfNumbers)
+        {
+            var mixtureOfNumbersAndWords = FizzBuzz(collectionOfNumbers).ToArray();
+
+            var indexOfWords = mixtureOfNumbersAndWords.Select((word, index) => (word, index))
+                .Where(x => !int.TryParse(x.word, out _)).Select(n => n.index).ToList();
+
+            Assert.That(_challenge.ParseCollection(mixtureOfNumbersAndWords).Where((x, index) => 
+                    indexOfWords.Contains(index)).All(x => x == 0));
+        }
+
 
         #endregion
 
@@ -143,6 +180,15 @@ namespace LinqChallenge.Tests.Easy
             }
         };
 
+        private (IEnumerable<int> Integers, IEnumerable<string> Strings) GetNumbersAsIntsAndStrings(IEnumerable<int> numbers)
+        {
+            var integers = numbers.ToArray();
+
+            var strings = integers.Select(x => x.ToString());
+
+            return (integers, strings);
+        }
+
         private (IEnumerable<int> input, IEnumerable<int> output, int numberToDivideBy) GetNumbersAndTheirDivision(IEnumerable<int> numbers)
         {
             var numberToDivideBy = new Random().Next(1, 10);
@@ -155,6 +201,9 @@ namespace LinqChallenge.Tests.Easy
         }
 
         #endregion
+
+        private IEnumerable<string> FizzBuzz(IEnumerable<int> numbers) => numbers.Select(x =>
+            x % 3 == 0 ? x % 5 == 0 ? "FizzBuzz" : "Fizz" : x % 5 == 0 ? "Buzz" : $"{x}");
 
     }
 
