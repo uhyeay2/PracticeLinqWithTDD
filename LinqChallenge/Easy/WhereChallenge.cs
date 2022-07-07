@@ -1,4 +1,6 @@
 ﻿using LinqChallenge.Domain.Entities;
+using LinqChallenge.Domain.Enums;
+using LinqChallenge.Domain.Extensions;
 using LinqChallenge.Domain.Interfaces;
 using System.Linq;
 
@@ -20,7 +22,7 @@ namespace LinqChallenge.Easy
         */
         public IEnumerable<Person> GetPeopleOlderThanEighteen(IEnumerable<Person> people)
         {
-            throw new NotImplementedException();
+            return people.IsNullOrEmpty() ? Enumerable.Empty<Person>() : people.Where(p => p.Age > 18);
         }
 
 
@@ -35,7 +37,7 @@ namespace LinqChallenge.Easy
         */
         public IEnumerable<Person> GetPeopleWhoHaveTheFavoriteColorBlue(IEnumerable<Person> people)
         {
-            throw new NotImplementedException();
+            return people.IsNullOrEmpty() ? Enumerable.Empty<Person>() : people.Where(p => p.FavoriteColor == Color.Blue);
         }
 
 
@@ -50,7 +52,7 @@ namespace LinqChallenge.Easy
         */
         public IEnumerable<Person> GetPeopleBornInApril(IEnumerable<Person> people)
         {
-            throw new NotImplementedException();
+            return people.IsNullOrEmpty() ? Enumerable.Empty<Person>() : people.Where(x => x.DateOfBirth.Month == 4);
         }
 
 
@@ -65,7 +67,7 @@ namespace LinqChallenge.Easy
         */
         public IEnumerable<Person> GetPeopleWhoseLastNameStartsWithA(IEnumerable<Person> people)
         {
-            throw new NotImplementedException();
+            return people.IsNullOrEmpty() ? Enumerable.Empty<Person>() : people.Where(x => x.LastName.StartsWith('A'));
         }
 
 
@@ -81,7 +83,9 @@ namespace LinqChallenge.Easy
         */
         public IEnumerable<Person> GetPeopleWhereFullNameContainsChar(IEnumerable<Person> people, char c)
         {
-            throw new NotImplementedException();
+            return people.IsNullOrEmpty() ? Enumerable.Empty<Person>()
+                : char.IsLetter(c) ? people.Where(x => $"{x.FirstName}{x.LastName}".Contains(c))
+                : throw new Exception("Character provided must be a letter");
         }
 
 
@@ -98,7 +102,11 @@ namespace LinqChallenge.Easy
         */
         public IEnumerable<Person> GetPeopleTallerThan(IEnumerable<Person> people, Length height)
         {
-            throw new NotImplementedException();
+            if(height == null || !height.IsValid())
+            {
+                throw new Exception("Invalid Height - Height must be greater than 0.");
+            }
+            return people.IsNullOrEmpty() ? Enumerable.Empty<Person>() : people.Where(x => x.Height > height);
         }
 
         /*  Are you done?

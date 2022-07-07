@@ -26,7 +26,7 @@ namespace LinqChallenge.Easy
         */
         public IEnumerable<DateTime> GetBirthdays(IEnumerable<Person> people)
         {
-            throw new NotImplementedException();
+            return people.IsNullOrEmpty() ? Enumerable.Empty<DateTime>() : people.Select(p => p.DateOfBirth);
         }
 
 
@@ -39,7 +39,7 @@ namespace LinqChallenge.Easy
         */
         public IEnumerable<string> ConvertToUppercase(IEnumerable<string> input)
         {
-            throw new NotImplementedException();
+            return input.IsNullOrEmpty() ? Enumerable.Empty<string>() : input.Select(s => s.ToUpper());
         }
 
 
@@ -52,7 +52,7 @@ namespace LinqChallenge.Easy
         */
         public IEnumerable<int> SelectInches(IEnumerable<Length> collectionOfLengths)
         {
-            throw new NotImplementedException();
+            return collectionOfLengths.IsNullOrEmpty() ? Enumerable.Empty<int>() : collectionOfLengths.Select(l => l.Inches);
         }
 
 
@@ -66,7 +66,9 @@ namespace LinqChallenge.Easy
         */
         public IEnumerable<int> DivideNumbers(IEnumerable<int> numbers, int numberToDivideBy)
         {
-            throw new NotImplementedException();
+            return numbers.IsNullOrEmpty() ? Enumerable.Empty<int>()
+                : numberToDivideBy != 0 ? numbers.Select(n => n / numberToDivideBy)
+                : throw new Exception("Invalid Input! Cannot Divide By Zero!");
         }
 
 
@@ -80,7 +82,8 @@ namespace LinqChallenge.Easy
         */
         public IEnumerable<int> ParseCollection(IEnumerable<string> possibleNumbers)
         {
-            throw new NotImplementedException();
+            return possibleNumbers.IsNullOrEmpty() ? Enumerable.Empty<int>()
+                : possibleNumbers.Select(x => int.TryParse(x, out var n) ? n : 0);
         }
 
 
@@ -113,7 +116,7 @@ namespace LinqChallenge.Easy
         */
         public IEnumerable<int> ConvertToThePowerOfIndex(IEnumerable<int> numbers)
         {
-            throw new NotImplementedException();
+            return numbers.IsNullOrEmpty() ? Enumerable.Empty<int>() : numbers.Select((x, i) => (int)Math.Pow(x, i));
         }
     }
 }
