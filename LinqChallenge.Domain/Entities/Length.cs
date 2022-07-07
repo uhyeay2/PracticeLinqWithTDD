@@ -65,11 +65,12 @@ namespace LinqChallenge.Domain.Entities
         public static bool operator >(Length a, Length b) => a.Centimeters > b.Centimeters;
 
         public static bool operator <(Length a, Length b) => a.Centimeters < b.Centimeters;
+
         #endregion
 
         #region Validation
 
-        public string ValidationMessage { get ; set ; }
+        public string? ValidationMessage { get ; set ; }
 
         public bool IsValid()
         {

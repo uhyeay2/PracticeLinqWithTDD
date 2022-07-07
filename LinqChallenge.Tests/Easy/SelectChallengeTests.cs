@@ -108,38 +108,81 @@ namespace LinqChallenge.Tests.Easy
 
         #region ParseCollection
 
+        /* This is your chance again!
+          
+            Below I have started a test for you. Here's what I've already done:
+                
+                1) The Test Method has already been named to define what we are testing.
+                2) The TestCaseSource is already being passed in. 
+                        - This is essentially four test cases, a null, and an empty Array, List, and Enumerable.
+                
+            What do you need to do?
 
-        [TestCaseSource(nameof(_nullOrEmptyCollectionOfStrings)),
-        Description("First Test - Return empty collection when input is null or empty")]
-        public void DivideNumbers_Given_NullOrEmpty_CollectionOfStrings_Should_ReturnEmptyCollection(IEnumerable<string> nullOrEmptyCollectionOfStrings)
-        {
-            Assert.That(_challenge.ParseCollection(nullOrEmptyCollectionOfStrings), Is.Empty);
-        }
+            You need to set up the logic to assert the ParseCollection() method is returning an empty IEnumerable when given any of these test cases.
+
+            If you're feeling lost feel free to reference one of my other tests.
+            If you haven't already created your own test in the Easy.WhereChallengeTests then that may be a slightly easier starting point.
+         
+         */
+
+        //[TestCaseSource(nameof(_nullOrEmptyCollectionOfStrings)),
+        //Description("First Test - Return empty collection when input is null or empty")]
+        //public void DivideNumbers_Given_NullOrEmpty_CollectionOfStrings_Should_ReturnEmptyCollection(IEnumerable<string> nullOrEmptyCollectionOfStrings)
+        //{           
+        //    // I've set up the Arrange/Act/Assert below in case you would like to use that as a starting point.
+
+        //    // Arrange
+
+        //    // Act
+
+        //    // Assert
+        //}
 
 
-        [TestCaseSource(nameof(_collectionOfNumbers)),
-        Description("Second Test - Return numbers parsed into strings when given a collection of strings")]
-        public void DivideNumbers_Given_CollectionOfStrings_WhereAllAreNumbers_Should_ReturnStrings_ParsedIntoInts(IEnumerable<int> collectionOfNumbers)
-        {
-            var (expected, numbers) = GetNumbersAsIntsAndStrings(collectionOfNumbers);
+        //[TestCaseSource(nameof(_collectionOfNumbers)),
+        //Description("Second Test - Return numbers parsed into strings when given a collection of strings")]
+        //public void DivideNumbers_Given_CollectionOfStrings_WhereAllAreNumbers_Should_ReturnStrings_ParsedIntoInts(IEnumerable<int> collectionOfNumbers)
+        //{
+        //    var (expected, numbers) = GetNumbersAsIntsAndStrings(collectionOfNumbers);
 
-            Assert.That(_challenge.ParseCollection(numbers), Is.EqualTo(expected));
-        }
+        //    Assert.That(_challenge.ParseCollection(numbers), Is.EqualTo(expected));
+        //}
 
 
-        [TestCaseSource(nameof(_collectionOfNumbers)),
-        Description("Third Test - Return strings as 0 if they are not a number")]
-        public void DivideNumbers_Given_CollectionOfStrings_WhereNotAllAreNumbers_Should_ReturnZero_ForStringsThat_AreNotNumbers(IEnumerable<int> collectionOfNumbers)
-        {
-            var mixtureOfNumbersAndWords = FizzBuzz(collectionOfNumbers).ToArray();
+        //[TestCaseSource(nameof(_collectionOfNumbers)),
+        //Description("Third Test - Return strings as 0 if they are not a number")]
+        //public void DivideNumbers_Given_CollectionOfStrings_WhereNotAllAreNumbers_Should_ReturnZero_ForStringsThat_AreNotNumbers(IEnumerable<int> collectionOfNumbers)
+        //{
+        //    var mixtureOfNumbersAndWords = FizzBuzz(collectionOfNumbers).ToArray();
 
-            var indexOfWords = mixtureOfNumbersAndWords.Select((word, index) => (word, index))
-                .Where(x => !int.TryParse(x.word, out _)).Select(n => n.index).ToList();
+        //    var indexOfWords = mixtureOfNumbersAndWords.Select((word, index) => (word, index))
+        //        .Where(x => !int.TryParse(x.word, out _)).Select(n => n.index).ToList();
 
-            Assert.That(_challenge.ParseCollection(mixtureOfNumbersAndWords).Where((x, index) => 
-                    indexOfWords.Contains(index)).All(x => x == 0));
-        }
+        //    Assert.That(_challenge.ParseCollection(mixtureOfNumbersAndWords).Where((x, index) => 
+        //            indexOfWords.Contains(index)).All(x => x == 0));
+        //}
 
+
+        #endregion
+
+        #region ConvertToThePowerOfIndex
+
+        //[TestCaseSource(nameof(_nullOrEmptyCollectionOfInts)),
+        //Description("First Test - Return empty collection when input is null or empty")]
+        //public void ConvertToThePowerOfIndex_Given_NullOrEmpty_CollectionOfInts_Should_ReturnEmptyCollection(IEnumerable<int> nullOrEmptyCollectionOfInts)
+        //{
+        //    Assert.That(_challenge.ConvertToThePowerOfIndex(nullOrEmptyCollectionOfInts), Is.Empty);
+        //}
+
+
+        //[TestCaseSource(nameof(_collectionOfNumbers)),
+        //Description("Second Test - Return empty collection when input is null or empty")]
+        //public void ConvertToThePowerOfIndex_Given_CollectionOfInts_Should_ReturnNumbers_ToThePowerOf_TheirIndex(IEnumerable<int> collectionOfNumbers)
+        //{
+        //    var (input, output) = GetNumbersAndTheirPowerToIndex(collectionOfNumbers);
+
+        //    Assert.That(_challenge.ConvertToThePowerOfIndex(input), Is.EqualTo(output));
+        //}
 
         #endregion
 
@@ -189,6 +232,15 @@ namespace LinqChallenge.Tests.Easy
             return (integers, strings);
         }
 
+        private (IEnumerable<int> Numbers, IEnumerable<int> Powers) GetNumbersAndTheirPowerToIndex(IEnumerable<int> numbers)
+        {
+            var nums = numbers.ToArray();
+
+            var powers = nums.Select( (x, i) => (int)Math.Pow(x, i));
+
+            return (nums, powers);
+        }
+
         private (IEnumerable<int> input, IEnumerable<int> output, int numberToDivideBy) GetNumbersAndTheirDivision(IEnumerable<int> numbers)
         {
             var numberToDivideBy = new Random().Next(1, 10);
@@ -204,7 +256,5 @@ namespace LinqChallenge.Tests.Easy
 
         private IEnumerable<string> FizzBuzz(IEnumerable<int> numbers) => numbers.Select(x =>
             x % 3 == 0 ? x % 5 == 0 ? "FizzBuzz" : "Fizz" : x % 5 == 0 ? "Buzz" : $"{x}");
-
     }
-
 }
