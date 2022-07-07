@@ -9,12 +9,14 @@ namespace LinqChallenge.Tests.Easy
     {
         /*  Getting Started Instructions
             
-            TODO: Read Instructions! - You can delete this line after reading 
+            // TODO: Read Instructions! - You can delete this line after reading 
                                         - You can see TODO's from ( View -> Task List )         
 
 
             This branch is focused on practicing Linq. For that reason, all tests are uncommented from the start.
             Each method will have a series of tests to ensure the proper result is returned. 
+
+            Note: Despite this being "Stricly Linq" - There are tests to ensure you keep in mind the possibility of nulls or bad input.
 
 
             If you would like to practice writing tests, or using Test Driven Development, you can try one of my other branches:
@@ -24,7 +26,6 @@ namespace LinqChallenge.Tests.Easy
                 - TDD_Practice  : The first test is partially started as an example. Recommended test names are provided.
                                      - This branch allows you to practice writing every test yourself.
                                      - If this sounds intimidating, remember you can reference branch for examples.
-
 
             Introduction Video: https://drive.google.com/file/d/17m934DFY45EtUr4H8YCJbtORUF5rPDYq/view?usp=sharing
         */

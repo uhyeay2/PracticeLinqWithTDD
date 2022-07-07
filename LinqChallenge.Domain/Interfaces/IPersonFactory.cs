@@ -12,6 +12,9 @@ namespace LinqChallenge.Domain.Interfaces
         /// <returns></returns>
         Person CreateUnique();
 
+        Person CreateSpecific(string? firstName = null, string? lastName = null, DateTime? birthday = null,
+            Length? height = null, Color? favoriteColor = null, bool? createAdult = null);
+
         Person CreatePersonWhoDoesNotLikeTheColor(Color favoriteColor);
 
         Person CreatePersonWithinHeightRange(Length minHeight, Length maxHeight);

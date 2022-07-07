@@ -9,8 +9,6 @@ using System.Threading.Tasks;
 
 namespace LinqChallenge.Tests
 {
-    // Using this technically makes my tests "Integration" tests instead of Unit tests - But I wanted to go this route
-    // for some extra personal fun on the project, and to avoid having to come up with my own test data (or insert and store it somewhere)
     public class TestDataFactories
     {
         public IPersonFactory PersonFactory { get; set; }
@@ -23,7 +21,9 @@ namespace LinqChallenge.Tests
 
         private readonly int _numberOfTestCases, _numberOfObjectsPerTestCase;
 
-        public TestDataFactories(int numberOfTestCases, int numberOfObjectsPerTestCase)
+        private readonly Random _rng = new Random();
+
+        public TestDataFactories(int numberOfTestCases = 25, int numberOfObjectsPerTestCase = 50)
         {
             var today = DateTime.UtcNow;
 
@@ -38,8 +38,20 @@ namespace LinqChallenge.Tests
             PersonFactory = new PersonFactory(RandomFirstNameFactory, RandomLastNameFactory, RandomDateFactory);
         }
 
+        public object[] EmptyCollection<T>() => new[] { Enumerable.Empty<T>(), Array.Empty<T>(), new List<T>(), null! };
+        
         private IEnumerable<IEnumerable<int>> BaseTestCaseCollection => 
             Enumerable.Range(0, _numberOfTestCases).Select(_ => Enumerable.Range(0, _numberOfObjectsPerTestCase));
+
+        public IEnumerable<IEnumerable<string>> CollectionOfStrings =>
+            BaseTestCaseCollection.Select(_ => _.Select(_ => _rng.Next(101) % 2 == 0 ? 
+                RandomFirstNameFactory.GetRandom() : RandomLastNameFactory.GetRandom()));
+
+        public IEnumerable<IEnumerable<int>> CollectionOfRandomNumbersFromOneToThreeHundred =>
+            BaseTestCaseCollection.Select(_ => _.Select(_ => _rng.Next( 1, 301)));
+
+        public IEnumerable<IEnumerable<Length>> CollectionOfLengths =>
+            BaseTestCaseCollection.Select(_ => _.Select(_ => new Length(_rng.Next(1, 180))));
 
         public IEnumerable<IEnumerable<Person>> CollectionOfAdultPeople => 
             BaseTestCaseCollection.Select(_ => _.Select(_ => PersonFactory.CreateAdult()));

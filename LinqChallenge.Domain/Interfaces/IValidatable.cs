@@ -8,7 +8,7 @@ namespace LinqChallenge.Domain.Interfaces
 {
     public interface IValidatable
     {
-        public string ValidationMessage { get; set; }
+        public string? ValidationMessage { get; set; }
 
         bool IsValid();
     }
