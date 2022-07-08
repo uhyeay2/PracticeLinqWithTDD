@@ -37,7 +37,7 @@ namespace LinqChallenge.Easy
             Given_NullOrEmpty_CollectionOfStrings_Should_ReturnEmptyCollection
             Given_CollectionOfStrings_Should_ReturnCollection_OrderedAToZ          
         */
-        public IEnumerable<int> OrderByAToZ(IEnumerable<string> words)
+        public IEnumerable<string> OrderByAToZ(IEnumerable<string> words)
         {
             throw new NotImplementedException();
         }
