@@ -7,12 +7,11 @@ using System.Threading.Tasks;
 
 namespace LinqChallenge.Easy
 {
-    /*
-        Select Is used to transform a collection of objects. This is helpful in many ways.
-        
-        In these challenges we can practice using Select to return a property of an object,
-        or to transform a collection to alter each of the elements in some way.         
-    */
+    /// <summary>
+    /// Select is used to transform a collection of objects.
+    /// In these challenges we practice using Select to return a property of an object,
+    /// or to transform a collection, meaning to alter each of the elements in some way.
+    /// </summary>
     public class SelectChallenge
     {
 
@@ -104,7 +103,7 @@ namespace LinqChallenge.Easy
 
             { 1, 3, 4, 125, 16}
 
-            Again, this is (1 ^0), (3 ^1), (2 ^2), (5 ^3), (2 ^4) - Each of these is the Element to the power of its index
+            Again, this is (42 ^0), (3 ^1), (2 ^2), (5 ^3), (2 ^4) - Each of these is the Element to the power of its index
 
             Hint - You can use Math.Pow
             Another Hint - You can not only do .Select(x => ... ) - but you can also do .Select( (x, i) => ... )

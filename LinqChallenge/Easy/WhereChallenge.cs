@@ -3,6 +3,11 @@ using System.Linq;
 
 namespace LinqChallenge.Easy
 {
+    /// <summary>
+    /// Where is used to filter a collection of objects.
+    /// In these challenges we will select some of the objects from a collection,
+    /// based on a true/false condition that we pass into the .Where() Linq method.
+    /// </summary>
     public class WhereChallenge
     {
         /*  GetPeopleOlderThanEighteen - Recommended Requirements          
