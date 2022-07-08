@@ -15,6 +15,9 @@ namespace LinqChallenge.Easy
     /// </summary>
     public class SelectChallenge
     {
+        // All tests for this class can be found in the following location:
+        // LinqChallenge.Tests.Easy.SelectChallengeTests
+
 
         /*  GetBirthdays - Recommended Requirements
           
@@ -108,11 +111,26 @@ namespace LinqChallenge.Easy
 
             Hint - You can use Math.Pow
             Another Hint - You can not only do .Select(x => ... ) - but you can also do .Select( (x, i) => ... )
-
         */
         public IEnumerable<int> ConvertToThePowerOfIndex(IEnumerable<int> numbers)
         {
             throw new NotImplementedException();
         }
+
+        /*  Are you done?
+
+            If so, Congratulations! You've reached the end of my Easy challenges for Linq's .Select() method.
+
+            This was the second challenge class that I made. I hope you're enjoying my repository!
+
+            You can really do the challenges in any order that you want, but if you're following the order that I
+            created this repository in, then the next challenge to do will be Easy.OrderByChallenge            
+            
+            Do you have any ideas for more methods/tests? Feel free to make up your own tests/methods.
+            I'm also welcome to receiving PR contributions that follow the same flow as the rest of this project.
+            
+            Thank you for taking the time to use my repository,
+            Daniel Aguirre         
+         */
     }
 }

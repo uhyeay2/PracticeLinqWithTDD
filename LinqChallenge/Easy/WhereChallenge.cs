@@ -9,12 +9,12 @@ namespace LinqChallenge.Easy
     /// In these challenges we will select some of the objects from a collection,
     /// based on a true/false condition that we pass into the .Where() Linq method.
     /// </summary>
-    /// <summary>
-    /// All tests for this class can be found in the following location:
-    /// LinqChallenge.Tests.Easy.WhereChallengeTests
-    /// </summary>
     public class WhereChallenge
     {
+        // All tests for this class can be found in the following location:
+        // LinqChallenge.Tests.Easy.WhereChallengeTests
+
+
         /* GetPeopleOlderThanEighteen - Tests Details
 
             Below are the names of your tests. You should try to complete these one at a time.
@@ -111,13 +111,13 @@ namespace LinqChallenge.Easy
            
             If so, Congratulations! You've reached the end of my Easy challenges for Linq's .Where() method.
 
+            If you want to go in the order I created the repository, then you can move to Easy/SelectChallenge next.              
+            
             Do you have any ideas for more methods/tests? Feel free to make up your own tests/methods.
-            I'm also welcome to receiving PR contributions that follow the same flow as the rest of this project (across all branches).
+            I'm also welcome to receiving PR contributions that follow the same flow as the rest of this project.
             
             Thank you for taking the time to use my repository,
             Daniel Aguirre
-
-            -- If you want to go in the order I created the repository, then you can move to Easy/SelectChallenge next.              
         */
     }
 }

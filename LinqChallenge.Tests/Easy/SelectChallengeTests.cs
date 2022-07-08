@@ -121,8 +121,7 @@ namespace LinqChallenge.Tests.Easy
             You need to set up the logic to assert the ParseCollection() method is returning an empty IEnumerable when given any of these test cases.
 
             If you're feeling lost feel free to reference one of my other tests.
-            If you haven't already created your own test in the Easy.WhereChallengeTests then that may be a slightly easier starting point.
-         
+            If you haven't already created your own test in the Easy.WhereChallengeTests then that may be a slightly easier starting point.         
          */
 
         //[TestCaseSource(nameof(_nullOrEmptyCollectionOfStrings)),

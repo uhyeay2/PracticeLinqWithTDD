@@ -1,4 +1,5 @@
 ﻿using LinqChallenge.Domain.Entities;
+using LinqChallenge.Domain.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace LinqChallenge.Easy
     public class OrderByChallenge
     {
 
-        /*  OrderFromLowestToHighest - Recommended Requirements
+        /*  OrderByLowestToHighest - Recommended Requirements
           
             These are suggested names for your tests. They should be descriptive enough for you to create an assertion.
              
@@ -30,14 +31,14 @@ namespace LinqChallenge.Easy
         }
 
 
-        /*  OrderFromAToZ - Recommended Requirements
+        /*  OrderByAToZ - Recommended Requirements
           
             These are suggested names for your tests. They should be descriptive enough for you to create an assertion.
              
             Given_NullOrEmpty_CollectionOfStrings_Should_ReturnEmptyCollection
             Given_CollectionOfStrings_Should_ReturnCollection_OrderedAToZ          
         */
-        public IEnumerable<int> OrderByAToZ(IEnumerable<string> words)
+        public IEnumerable<string> OrderByAToZ(IEnumerable<string> words)
         {
             throw new NotImplementedException();
         }
@@ -80,9 +81,9 @@ namespace LinqChallenge.Easy
         {
             throw new NotImplementedException();
         }
-        
 
-        /*  OrderFromOldestToYoungest - Recommended Requirements
+
+        /*  OrderByOldestToYoungest - Recommended Requirements
           
             These are suggested names for your tests. They should be descriptive enough for you to create an assertion.
              
