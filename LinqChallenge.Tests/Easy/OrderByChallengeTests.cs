@@ -72,24 +72,86 @@ namespace LinqChallenge.Tests.Easy
 
         #region OrderByShortestToTallest
 
+        //[TestCaseSource(nameof(_nullOrEmptyCollectionOfPeople)),
+        //Description("First Test - Return empty collection when input is null or empty")]
+        //public void OrderByShortestToTallest_Given_NullOrEmpty_CollectionOfPerson_Should_ReturnEmptyCollection(IEnumerable<Person> nullOrEmptyCollectionOfPeople)
+        //{
+        //    Assert.That(_challenge.OrderByShortestToTallest(nullOrEmptyCollectionOfPeople), Is.Empty);
+        //}
+
+
+        //[TestCaseSource(nameof(_collectionOfPeople)),
+        //Description("Second Test - Return people ordered from shortest to tallest")]
+        //public void OrderByShortestToTallest_Given_CollectionOfPerson_Should_ReturnCollection_OrderedShortestToTallest(IEnumerable<Person> collectionOfPeople)
+        //{
+        //    var (input, output) = GetPeopleMixedAndOrderedShortestToTallest(collectionOfPeople);
+
+        //    Assert.That(_challenge.OrderByShortestToTallest(input), Is.EqualTo(output));
+        //}
+
+        #endregion
+
+        #region OrderByLongestToShortest
+
+        //[TestCaseSource(nameof(_nullOrEmptyCollectionOfLengths)),
+        //Description("First Test - Return empty collection when input is null or empty")]
+        //public void OrderByLongestToShortest_Given_NullOrEmpty_CollectionOfLengths_Should_ReturnEmptyCollection(IEnumerable<Length> nullOrEmptyCollectionOfLengths)
+        //{
+        //    Assert.That(_challenge.OrderByLongestToShortest(nullOrEmptyCollectionOfLengths), Is.Empty);
+        //}
+
+
+        //[TestCaseSource(nameof(_collectionOfLengths)),
+        //Description("Second Test - Return lengths ordered from longest to shortest")]
+        //public void OrderByLongestToShortest_Given_CollectionOfLength_Should_ReturnCollection_OrderedBy_LongestToShortest(IEnumerable<Length> collectionOfLengths)
+        //{
+        //    var (input, output) = GetLengthsMixedAndOrderedLongestToShortest(collectionOfLengths);
+
+        //    Assert.That(_challenge.OrderByLongestToShortest(input), Is.EqualTo(output));
+        //}
+
+
+        #endregion
+
+        #region OrderByLastInitialDescending
+
+        //[TestCaseSource(nameof(_nullOrEmptyCollectionOfPeople)),
+        //Description("First Test - Return empty collection when input is null or empty")]
+        //public void OrderByLastInitialDescending_Given_NullOrEmpty_CollectionOfPerson_Should_ReturnEmptyCollection(IEnumerable<Person> nullOrEmptyCollectionOfPeople)
+        //{
+        //    Assert.That(_challenge.OrderByLastInitialDescending(nullOrEmptyCollectionOfPeople), Is.Empty);
+        //}
+
+
+        //[TestCaseSource(nameof(_collectionOfPeople)),
+        //Description("Second Test - Return people ordered by their last initial from Z to A")]
+        //public void OrderByLastInitialDescending_Given_CollectionOfPerson_Should_ReturnCollection_OrderedBy_LastInitial_FromZToA(IEnumerable<Person> collectionOfPeople)
+        //{
+        //    var (input, output) = GetPeopleMixedAndOrderedByLastInitialZToA(collectionOfPeople);
+
+        //    Assert.That(_challenge.OrderByLastInitialDescending(input), Is.EqualTo(output));
+        //}
+
+        #endregion
+
+        #region OrderByOldestToYoungest
 
         [TestCaseSource(nameof(_nullOrEmptyCollectionOfPeople)),
         Description("First Test - Return empty collection when input is null or empty")]
-        public void OrderByShortestToTallest_Given_NullOrEmpty_CollectionOfPerson_Should_ReturnEmptyCollection(IEnumerable<Person> nullOrEmptyCollectionOfPeople)
+        public void OrderByOldestToYoungest_Given_NullOrEmpty_CollectionOfPerson_Should_ReturnEmptyCollection(IEnumerable<Person> nullOrEmptyCollectionOfPeople)
         {
-            Assert.That(_challenge.OrderByShortestToTallest(nullOrEmptyCollectionOfPeople), Is.Empty);
+            Assert.That(_challenge.OrderByOldestToYoungest(nullOrEmptyCollectionOfPeople), Is.Empty);
         }
 
 
         [TestCaseSource(nameof(_collectionOfPeople)),
-        Description("First Test - Return people ordered from shortest to tallest")]
-        public void OrderByShortestToTallest_Given_CollectionOfPerson_Should_ReturnCollection_OrderedShortestToTallest(IEnumerable<Person> collectionOfPeople)
+        Description("Second Test - Return people ordered from oldest to youngest")]
+        public void OrderByOldestToYoungest_Given_CollectionOfPerson_Should_ReturnCollection_OrderedOldestToYoungest(IEnumerable<Person> collectionOfPeople)
         {
-            var (input, output) = GetPeopleMixedAndOrderedShortestToTallest(collectionOfPeople);
+            var (input, output) = GetPeopleMixedAndOldestToYoungest(collectionOfPeople);
 
-            Assert.That(_challenge.OrderByShortestToTallest(input), Is.EqualTo(output));
+            Assert.That(_challenge.OrderByOldestToYoungest(input), Is.EqualTo(output));
         }
-
 
         #endregion
     }

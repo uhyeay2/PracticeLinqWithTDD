@@ -26,6 +26,8 @@ namespace LinqChallenge.Tests.Easy
 
         protected static readonly IEnumerable<IEnumerable<string>> _collectionOfStrings = _testData.CollectionOfStrings;
 
+        protected static readonly IEnumerable<IEnumerable<Length>> _collectionOfLengths = _testData.CollectionOfLengths;
+
         protected static readonly IEnumerable<IEnumerable<int>> _collectionOfNumbers = _testData.CollectionOfRandomNumbersFromOneToThreeHundred;
 
         #region People
@@ -96,6 +98,33 @@ namespace LinqChallenge.Tests.Easy
             var mixed = people.ToArray();
 
             var ordered = mixed.OrderBy(x => x.Height);
+
+            return (mixed, ordered);
+        }
+
+        protected (IEnumerable<Length> Input, IEnumerable<Length> Output) GetLengthsMixedAndOrderedLongestToShortest(IEnumerable<Length> lengths)
+        {
+            var mixed = lengths.ToArray();
+
+            var ordered = mixed.OrderByDescending(x => x);
+
+            return (mixed, ordered);
+        }
+
+        protected (IEnumerable<Person> Input, IEnumerable<Person> Output) GetPeopleMixedAndOrderedByLastInitialZToA(IEnumerable<Person> people)
+        {
+            var mixed = people.ToArray();
+
+            var ordered = mixed.OrderByDescending(x => x.LastName);
+
+            return (mixed, ordered);
+        }
+
+        protected (IEnumerable<Person> Input, IEnumerable<Person> Output) GetPeopleMixedAndOldestToYoungest(IEnumerable<Person> people)
+        {
+            var mixed = people.ToArray();
+
+            var ordered = mixed.OrderByDescending(x => x.DateOfBirth);
 
             return (mixed, ordered);
         }

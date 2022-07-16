@@ -95,6 +95,5 @@ namespace LinqChallenge.Easy
             throw new NotImplementedException();
         }
 
-
     }
 }
