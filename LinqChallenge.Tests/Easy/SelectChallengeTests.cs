@@ -1,4 +1,5 @@
-﻿using LinqChallenge.Easy;
+﻿using LinqChallenge.Domain.Extensions;
+using LinqChallenge.Easy;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace LinqChallenge.Tests.Easy
 {
-    public class SelectChallengeTests
+    public class SelectChallengeTests : BaseTest
     {
-
         // If you are just starting, you can find the instructions in the Linq Challenge project, Easy folder, WhereChallenge.cs class
 
         private readonly SelectChallenge _challenge = new();
@@ -148,18 +148,18 @@ namespace LinqChallenge.Tests.Easy
         //}
 
 
-        //[TestCaseSource(nameof(_collectionOfNumbers)),
-        //Description("Third Test - Return strings as 0 if they are not a number")]
-        //public void DivideNumbers_Given_CollectionOfStrings_WhereNotAllAreNumbers_Should_ReturnZero_ForStringsThat_AreNotNumbers(IEnumerable<int> collectionOfNumbers)
-        //{
-        //    var mixtureOfNumbersAndWords = FizzBuzz(collectionOfNumbers).ToArray();
+        [TestCaseSource(nameof(_collectionOfNumbers)),
+        Description("Third Test - Return strings as 0 if they are not a number")]
+        public void DivideNumbers_Given_CollectionOfStrings_WhereNotAllAreNumbers_Should_ReturnZero_ForStringsThat_AreNotNumbers(IEnumerable<int> collectionOfNumbers)
+        {
+            var mixtureOfNumbersAndWords = collectionOfNumbers.FizzBuzz().ToArray();
 
-        //    var indexOfWords = mixtureOfNumbersAndWords.Select((word, index) => (word, index))
-        //        .Where(x => !int.TryParse(x.word, out _)).Select(n => n.index).ToList();
+            var indexOfWords = mixtureOfNumbersAndWords.Select((word, index) => (word, index))
+                .Where(x => !int.TryParse(x.word, out _)).Select(n => n.index).ToList();
 
-        //    Assert.That(_challenge.ParseCollection(mixtureOfNumbersAndWords).Where((x, index) => 
-        //            indexOfWords.Contains(index)).All(x => x == 0));
-        //}
+            Assert.That(_challenge.ParseCollection(mixtureOfNumbersAndWords).Where((x, index) =>
+                    indexOfWords.Contains(index)).All(x => x == 0));
+        }
 
 
         #endregion
@@ -183,77 +183,6 @@ namespace LinqChallenge.Tests.Easy
         //    Assert.That(_challenge.ConvertToThePowerOfIndex(input), Is.EqualTo(output));
         //}
 
-        #endregion
-
-        #region Test Cases
-
-        private static readonly TestDataFactories _testData = new();
-
-        public static readonly object[] _nullOrEmptyCollectionOfPeople = _testData.EmptyCollection<Person>();
-
-        public static readonly object[] _nullOrEmptyCollectionOfStrings = _testData.EmptyCollection<string>();
-
-        public static readonly object[] _nullOrEmptyCollectionOfLengths = _testData.EmptyCollection<Length>();
-
-        public static readonly object[] _nullOrEmptyCollectionOfInts = _testData.EmptyCollection<int>();
-
-        private static readonly IEnumerable<IEnumerable<string>> _collectionOfStrings = _testData.CollectionOfStrings;
-
-        private static readonly IEnumerable<IEnumerable<int>> _collectionOfNumbers = _testData.CollectionOfRandomNumbersFromOneToThreeHundred;
-
-        public static readonly object[] _peopleAndTheirBirthdays =
-        {
-            new object[]
-            {
-                new List<Person>()
-                {
-                    _testData.PersonFactory.CreateSpecific(birthday: new DateTime(1990, 7, 4)),
-                    _testData.PersonFactory.CreateSpecific(birthday: new DateTime(1992, 4, 6)),
-                    _testData.PersonFactory.CreateSpecific(birthday: new DateTime(1994, 10, 16)),
-                    _testData.PersonFactory.CreateSpecific(birthday: new DateTime(2000, 1, 20))
-                },
-                new List<DateTime>()
-                {
-                    new DateTime(1990, 7, 4),
-                    new DateTime(1992, 4, 6),
-                    new DateTime(1994, 10, 16),
-                    new DateTime(2000, 1, 20)
-                }
-            }
-        };
-
-        private (IEnumerable<int> Integers, IEnumerable<string> Strings) GetNumbersAsIntsAndStrings(IEnumerable<int> numbers)
-        {
-            var integers = numbers.ToArray();
-
-            var strings = integers.Select(x => x.ToString());
-
-            return (integers, strings);
-        }
-
-        private (IEnumerable<int> Numbers, IEnumerable<int> Powers) GetNumbersAndTheirPowerToIndex(IEnumerable<int> numbers)
-        {
-            var nums = numbers.ToArray();
-
-            var powers = nums.Select( (x, i) => (int)Math.Pow(x, i));
-
-            return (nums, powers);
-        }
-
-        private (IEnumerable<int> input, IEnumerable<int> output, int numberToDivideBy) GetNumbersAndTheirDivision(IEnumerable<int> numbers)
-        {
-            var numberToDivideBy = new Random().Next(1, 10);
-
-            var input = numbers.ToArray();
-
-            var output = input.Select(x => x / numberToDivideBy);
-
-            return (input, output, numberToDivideBy);
-        }
-
-        #endregion
-
-        private IEnumerable<string> FizzBuzz(IEnumerable<int> numbers) => numbers.Select(x =>
-            x % 3 == 0 ? x % 5 == 0 ? "FizzBuzz" : "Fizz" : x % 5 == 0 ? "Buzz" : $"{x}");
+        #endregion  
     }
 }

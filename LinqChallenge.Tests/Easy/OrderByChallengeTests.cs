@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LinqChallenge.Tests.Easy
 {
-    public class OrderByChallengeTests
+    public class OrderByChallengeTests : BaseTest
     {
 
         // If you are just starting, you can find the instructions in the Linq Challenge project, Easy folder, WhereChallenge.cs class
@@ -70,28 +70,27 @@ namespace LinqChallenge.Tests.Easy
 
         #endregion
 
-        #region Test Cases
+        #region OrderByShortestToTallest
 
-        private static readonly TestDataFactories _testData = new();
 
-        public static readonly object[] _nullOrEmptyCollectionOfInts = _testData.EmptyCollection<int>();
-        
-        public static readonly object[] _nullOrEmptyCollectionOfStrings = _testData.EmptyCollection<string>();
-
-        private static readonly IEnumerable<IEnumerable<string>> _collectionOfStrings = _testData.CollectionOfStrings;
-
-        private static readonly IEnumerable<IEnumerable<int>> _collectionOfNumbers = _testData.CollectionOfRandomNumbersFromOneToThreeHundred;
-
-        private (IEnumerable<T> Input, IEnumerable<T> Output) GetMixedAndOrderedCollection<T>(IEnumerable<T> numbers)
+        [TestCaseSource(nameof(_nullOrEmptyCollectionOfPeople)),
+        Description("First Test - Return empty collection when input is null or empty")]
+        public void OrderByShortestToTallest_Given_NullOrEmpty_CollectionOfPerson_Should_ReturnEmptyCollection(IEnumerable<Person> nullOrEmptyCollectionOfPeople)
         {
-            var mixed = numbers.ToArray();
-
-            var ordered = mixed.OrderBy(x => x).ToArray();
-
-            return (mixed, ordered);
+            Assert.That(_challenge.OrderByShortestToTallest(nullOrEmptyCollectionOfPeople), Is.Empty);
         }
 
-        #endregion
 
+        [TestCaseSource(nameof(_collectionOfPeople)),
+        Description("First Test - Return people ordered from shortest to tallest")]
+        public void OrderByShortestToTallest_Given_CollectionOfPerson_Should_ReturnCollection_OrderedShortestToTallest(IEnumerable<Person> collectionOfPeople)
+        {
+            var (input, output) = GetPeopleMixedAndOrderedShortestToTallest(collectionOfPeople);
+
+            Assert.That(_challenge.OrderByShortestToTallest(input), Is.EqualTo(output));
+        }
+
+
+        #endregion
     }
 }

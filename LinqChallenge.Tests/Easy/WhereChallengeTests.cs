@@ -5,7 +5,7 @@ using LinqChallenge.Easy;
 namespace LinqChallenge.Tests.Easy
 {
     [TestFixture]
-    public class WhereChallengeTests
+    public class WhereChallengeTests : BaseTest
     {
         /*  Getting Started Instructions
             
@@ -283,37 +283,6 @@ namespace LinqChallenge.Tests.Easy
         //    // Assert
         //    //throw new NotImplementedException(); // Remove this line and call your Assertion!
         //}
-
-        #endregion
-
-        #region TestCases
-
-        private const int numberOfTestCases = 25;
-
-        private const int numberOfPeoplePerTestCase = 50;
-
-        private static readonly TestDataFactories _testData = new(numberOfTestCases, numberOfPeoplePerTestCase);
-
-        private static readonly IEnumerable<IEnumerable<Person>> _collectionOfAdultPeopleTestCases = _testData.CollectionOfAdultPeople;
-
-        private static readonly IEnumerable<IEnumerable<Person>> _collectionOfChildrenTestCases = _testData.CollectionOfChildren;
-
-        private static readonly IEnumerable<IEnumerable<Person>> _collectionOfPeople = _testData.CollectionOfPeople;
-
-        private static readonly IEnumerable<IEnumerable<Person>> _collectionOfPeopleWhoDontLikeBlue = _testData.CollectionOfPeopleWhoDoNotLikeBlue;
-
-        private static readonly IEnumerable<IEnumerable<Person>> _collectionOfPeopleNotBornInApril = _testData.CollectionOfPeopleNotBornInApril;
-
-        private static readonly IEnumerable<IEnumerable<Person>> _collectionOfPeopleWhoseNameDoesNotContainA = _testData.CollectionOfPeopleWhoseNameDoesNotContain('a');
-
-        private static readonly IEnumerable<IEnumerable<Person>> _collectionOfPeopleShorterThanFourFoot = _testData.CollectionOfPeopleWithinHeightRange(new(1, 6), new(3, 6));
-
-        private static readonly IEnumerable<IEnumerable<Person>> _collectionOfPeopleTallerThanFourFoot = _testData.CollectionOfPeopleWithinHeightRange(new(4, 1), new(7, 6));
-
-        private static readonly object[] _nullOrEmptyCollectionOfPeople =
-        {
-            Enumerable.Empty<Person>(), Array.Empty<Person>(), new List<Person>(), null!
-        };
 
         #endregion
     }

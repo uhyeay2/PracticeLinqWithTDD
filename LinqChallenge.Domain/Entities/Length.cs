@@ -2,7 +2,7 @@
 
 namespace LinqChallenge.Domain.Entities
 {
-    public class Length : IValidatable
+    public class Length : IValidatable, IComparable
     {        
         // Private Base Length In Centimeters 
         private readonly double _lengthInCentimeters;
@@ -31,8 +31,7 @@ namespace LinqChallenge.Domain.Entities
 
         public int Inches => ConvertCentimetersToInches;
 
-        public (int Feet, int Inches) FeetAndInches => 
-            (ParseMaxFeetFromCentimeters, ParseInchesAfterSubtractingFeetFromCentimeters);
+        public (int Feet, int Inches) FeetAndInches => (MaxFeet, InchesAfterRemovingMaxFeet);
 
         #endregion
 
@@ -44,9 +43,9 @@ namespace LinqChallenge.Domain.Entities
         private const double _inchesToCentimetersRatio = 2.54;
 
         // Conversions
-        private int ParseMaxFeetFromCentimeters => ConvertCentimetersToInches / _inchesPerFoot;
+        private int MaxFeet => ConvertCentimetersToInches / _inchesPerFoot;
 
-        private int ParseInchesAfterSubtractingFeetFromCentimeters => ConvertCentimetersToInches % _inchesPerFoot;
+        private int InchesAfterRemovingMaxFeet => ConvertCentimetersToInches % _inchesPerFoot;
 
         private int ConvertCentimetersToInches => (int)Math.Round(_lengthInCentimeters / _inchesToCentimetersRatio);
 
@@ -68,6 +67,8 @@ namespace LinqChallenge.Domain.Entities
 
         #endregion
 
+        #region Interfaces
+
         #region Validation
 
         public string? ValidationMessage { get ; set ; }
@@ -79,5 +80,27 @@ namespace LinqChallenge.Domain.Entities
         }
 
         #endregion
+
+        #region Comparison
+
+        public int CompareTo(object? obj)
+        {
+            if(obj == null)
+            {
+                return 1;
+            }
+
+            if (obj is Length other)
+            {
+                return this.Centimeters.CompareTo(other.Centimeters);
+            }
+
+            throw new ArgumentException($"Cannot compare a Length against a {nameof(obj)}");
+        }
+
+        #endregion
+
+        #endregion
+
     }
 }
